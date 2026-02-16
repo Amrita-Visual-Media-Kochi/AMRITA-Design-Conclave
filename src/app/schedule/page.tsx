@@ -11,7 +11,7 @@ const day1Events = [
         title: "Event Inauguration",
         type: "session",
         colorClass: "blue",
-        speakers: [{ name: "Anoop Ambika", role: "CEO, Kerala Startup Mission", tag: "Chief Guest" }],
+        speakers: [{ name: "Anoop Ambika", role: "CEO, Kerala Startup Mission", tag: "Chief Guest", image: "/people/Anoop Ambika.jpg" }],
     },
     {
         time: "11:00 AM - 11:15 AM",
@@ -206,8 +206,9 @@ export default function SchedulePage() {
                                                                         <Image
                                                                             src={speaker.image}
                                                                             alt={speaker.name}
-                                                                            width={180}
-                                                                            height={180}
+                                                                            width={360}
+                                                                            height={360}
+                                                                            sizes="(max-width: 768px) 150px, 180px"
                                                                             className={styles.speakerImage}
                                                                         />
                                                                     ) : (
