@@ -1,7 +1,7 @@
 .section {
     width: 100%;
     background-color: #ffffff;
-    padding: 5rem clamp(1.5rem, 5vw, 5rem);
+    padding: 5rem clamp(1rem, 5vw, 5rem);
     display: flex;
     justify-content: center;
 }
@@ -22,7 +22,7 @@
 }
 
 .title {
-    font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
     color: #000000;
     line-height: 1.2;
@@ -37,13 +37,13 @@
 }
 
 .date {
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
     font-weight: 600;
     color: #333;
 }
 
 .description {
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
     line-height: 1.7;
     color: #666;
     max-width: 480px;
@@ -96,20 +96,21 @@
         gap: 2.5rem;
     }
 
-    .title {
-        font-size: 2.5rem;
-    }
-
     .imageFrame {
         max-width: 360px;
     }
 }
 
 @media (max-width: 768px) {
+    .section {
+        padding: 3rem clamp(1rem, 5vw, 5rem);
+    }
+
     .wrapper {
         flex-direction: column;
         text-align: center;
         align-items: center;
+        gap: 2rem;
     }
 
     .left {
@@ -124,11 +125,22 @@
         justify-content: center;
     }
 
-    .title {
-        font-size: 2rem;
+    .imageFrame {
+        max-width: 100%;
+        width: 100%;
+        border-width: 3px;
+        border-radius: 16px;
+        box-shadow: 6px 6px 0 rgba(109, 40, 217, 0.2);
     }
 
+    .button {
+        padding: 0.75rem 1.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
     .imageFrame {
-        max-width: 320px;
+        border-radius: 12px;
     }
 }
