@@ -42,13 +42,11 @@
     overflow: hidden;
 }
 
-.placeholderImage {
-    width: 100%;
+.eventImage {
     height: 100%;
-    background-color: #e8e8e8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: auto;
+    display: block;
+    object-fit: cover;
 }
 
 @media (max-width: 768px) {

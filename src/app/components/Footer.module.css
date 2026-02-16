@@ -8,14 +8,26 @@
 .box {
     max-width: 1200px;
     margin: 0 auto;
-    border: 1.5px solid #e5e7eb;
-    border-bottom: none;
-    border-radius: 32px;
+    border: none;
+    border-radius: 0 0 32px 32px;
     background-color: #ffffff;
     overflow: visible;
     padding: 0 3rem;
     position: relative;
     z-index: 2;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border: 1.5px solid #e5e7eb;
+    border-bottom: none;
+    border-radius: 0 0 32px 32px;
+    box-shadow: 0px 7px 14.2px -4px #5D489D;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%);
 }
 
 /* CTA area */
