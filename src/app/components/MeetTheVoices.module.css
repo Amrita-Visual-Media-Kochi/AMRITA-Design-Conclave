@@ -65,6 +65,22 @@
     border-radius: 16px;
     overflow: hidden;
     position: relative;
+    background-color: #f3f4f6;
+    /* Placeholder color before load */
+}
+
+/* Added class for the speaker image */
+.speakerImage {
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: grayscale(100%);
+}
+
+.card:hover .speakerImage {
+    transform: scale(1.05);
+    /* Subtle zoom on hover */
+    filter: grayscale(0%);
 }
 
 .placeholderImage {

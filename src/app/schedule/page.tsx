@@ -5,7 +5,23 @@ import Image from "next/image";
 import styles from "./schedule.module.css";
 import Footer from "../components/Footer";
 
-const day1Events = [
+type Speaker = {
+    name: string;
+    role?: string;
+    tag?: string;
+    image: string;
+};
+
+type Event = {
+    time: string;
+    title: string;
+    subtitle?: string;
+    type: string;
+    colorClass: string;
+    speakers?: Speaker[];
+};
+
+const day1Events: Event[] = [
     {
         time: "10:00 AM - 11:00 AM",
         title: "Event Inauguration",
@@ -71,7 +87,7 @@ const day1Events = [
     },
 ];
 
-const day2Events = [
+const day2Events: Event[] = [
     {
         time: "9:00 AM - 11:00 AM",
         title: "3D Printing Workshop by Kerala Startup Mission",

@@ -2,16 +2,66 @@ import Image from "next/image";
 import styles from "./MeetTheVoices.module.css";
 
 const speakers = [
-    { name: "Anoop Ambika", role: "CEO", company: "Kerala Startup Mission" },
-    { name: "Kavya Baburaj", role: "Founder", company: "Social PR" },
-    { name: "Anil Reddy", role: "Founder and Designer", company: "HappyPot" },
-    { name: "Ben Thomas", role: "Creative head", company: "EY" },
-    { name: "Advin Netto", role: "UX Designer", company: "Google" },
-    { name: "Udaya Kumar", role: "Lead UX Designer", company: "Siemens" },
-    { name: "Devika Panicker Prasad", role: "Product Designer", company: "Air India" },
-    { name: "Govind Janardhanan", role: "Sr. Director of Design", company: "Natquantum Shift Technologies" },
-    { name: "Vijay Raj N", role: "Sr Graphic Designer", company: "Webandcrafts" },
-    { name: "Hiran Venugopalan", role: "Product Designer", company: "Tata Communications" },
+    {
+        name: "Anoop Ambika",
+        role: "CEO",
+        company: "Kerala Startup Mission",
+        image: "/people/Anoop Ambika.jpg"
+    },
+    {
+        name: "Kavya Baburaj",
+        role: "Founder",
+        company: "Social PR",
+        image: "/people/Kavya Baburaj.jpg.jpeg" // Preserved original filename
+    },
+    {
+        name: "Anil Reddy",
+        role: "Founder and Designer",
+        company: "HappyPot",
+        image: "/people/Anil Reddy.png"
+    },
+    {
+        name: "Ben Thomas",
+        role: "Creative head",
+        company: "EY",
+        image: "/people/Ben Thomas.jpeg"
+    },
+    {
+        name: "Advin Netto",
+        role: "UX Designer",
+        company: "Google",
+        image: "/people/Advin Netto.png"
+    },
+    {
+        name: "Udaya Kumar",
+        role: "Lead UX Designer",
+        company: "Siemens",
+        image: "/people/Udaya Kumar.png"
+    },
+    {
+        name: "Devika Panicker Prasad",
+        role: "Product Designer",
+        company: "Air India",
+        image: "/people/Devika Panicker Prasad.png"
+    },
+    {
+        name: "Govind Janardhanan",
+        role: "Sr. Director of Design",
+        company: "Natquantum Shift Technologies",
+        image: "/people/Govind Janardhanan.png"
+    },
+    {
+        name: "Vijay Raj N",
+        role: "Sr Graphic Designer",
+        company: "Webandcrafts",
+        image: "/people/Vijay Raj N.jpeg"
+    },
+    {
+        name: "Hiran Venugopalan",
+        role: "Product Designer",
+        company: "Tata Communications",
+        image: "/people/Hiran Venugopalan.png"
+    },
 ];
 
 export default function MeetTheVoices() {
@@ -33,12 +83,13 @@ export default function MeetTheVoices() {
                     {speakers.map((speaker, index) => (
                         <div key={index} className={styles.card}>
                             <div className={styles.imageWrapper}>
-                                <div className={styles.placeholderImage}>
-                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#bbb" strokeWidth="1.5">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                                        <circle cx="12" cy="7" r="4" />
-                                    </svg>
-                                </div>
+                                <Image
+                                    src={speaker.image}
+                                    alt={speaker.name}
+                                    fill
+                                    className={styles.speakerImage}
+                                    sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                                />
                             </div>
                             <div className={styles.info}>
                                 <h3 className={styles.name}>{speaker.name}</h3>

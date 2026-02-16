@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./WhatYouGain.module.css";
 
@@ -36,45 +36,45 @@ function GainIcon({ type, color }: { type: string; color: string }) {
     switch (type) {
         case "grid":
             return (
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
                     <circle cx="8" cy="8" r="3.5" fill={color} />
-                    <circle cx="16" cy="8" r="3.5" fill={color} />
-                    <circle cx="24" cy="8" r="3.5" fill={color} />
-                    <circle cx="8" cy="16" r="3.5" fill={color} />
-                    <circle cx="16" cy="16" r="3.5" fill={color} />
-                    <circle cx="24" cy="16" r="3.5" fill={color} />
-                    <circle cx="8" cy="24" r="3.5" fill={color} />
-                    <circle cx="16" cy="24" r="3.5" fill={color} />
-                    <circle cx="24" cy="24" r="3.5" fill={color} />
+                    <circle cx="18" cy="8" r="3.5" fill={color} />
+                    <circle cx="28" cy="8" r="3.5" fill={color} />
+                    <circle cx="8" cy="18" r="3.5" fill={color} />
+                    <circle cx="18" cy="18" r="3.5" fill={color} />
+                    <circle cx="28" cy="18" r="3.5" fill={color} />
+                    <circle cx="8" cy="28" r="3.5" fill={color} />
+                    <circle cx="18" cy="28" r="3.5" fill={color} />
+                    <circle cx="28" cy="28" r="3.5" fill={color} />
                 </svg>
             );
         case "star":
             return (
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
                     <path
-                        d="M16 2L19.5 12.5L30 16L19.5 19.5L16 30L12.5 19.5L2 16L12.5 12.5L16 2Z"
+                        d="M18 2L21.5 14.5L34 18L21.5 21.5L18 34L14.5 21.5L2 18L14.5 14.5L18 2Z"
                         fill={color}
                     />
                 </svg>
             );
         case "sparkle":
             return (
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <circle cx="16" cy="16" r="10" fill={color} />
-                    <circle cx="16" cy="16" r="5" fill="white" />
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <circle cx="18" cy="18" r="12" fill={color} />
+                    <circle cx="18" cy="18" r="6" fill="white" />
                 </svg>
             );
         case "circle":
             return (
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <circle cx="16" cy="16" r="12" fill={color} />
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <circle cx="18" cy="18" r="14" fill={color} />
                 </svg>
             );
         case "target":
             return (
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <circle cx="16" cy="16" r="12" stroke={color} strokeWidth="3" fill="none" />
-                    <circle cx="16" cy="16" r="6" fill={color} />
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <circle cx="18" cy="18" r="14" stroke={color} strokeWidth="3" fill="none" />
+                    <circle cx="18" cy="18" r="7" fill={color} />
                 </svg>
             );
         default:
@@ -84,33 +84,38 @@ function GainIcon({ type, color }: { type: string; color: string }) {
 
 export default function WhatYouGain() {
     const trackRef = useRef<HTMLDivElement>(null);
-    const isPausedRef = useRef(false);
+    const [isHovered, setIsHovered] = useState(false);
+
+    // We duplicate the items to create a seamless loop
+    const allGains = [...gains, ...gains, ...gains];
+
+    const positionRef = useRef(0);
 
     useEffect(() => {
         const track = trackRef.current;
         if (!track) return;
 
         let animationId: number;
-        let scrollPos = 0;
         const speed = 0.5;
 
         const animate = () => {
-            if (!isPausedRef.current && track) {
-                scrollPos += speed;
-                const halfWidth = track.scrollWidth / 2;
-                if (scrollPos >= halfWidth) {
-                    scrollPos -= halfWidth;
+            if (!isHovered && track) {
+                positionRef.current += speed;
+                const totalWidth = track.scrollWidth;
+                const singleSetWidth = totalWidth / 3;
+
+                if (positionRef.current >= singleSetWidth) {
+                    positionRef.current -= singleSetWidth;
                 }
-                track.style.transform = `translateX(-${scrollPos}px)`;
+
+                track.style.transform = `translateX(-${positionRef.current}px)`;
             }
             animationId = requestAnimationFrame(animate);
         };
 
         animationId = requestAnimationFrame(animate);
         return () => cancelAnimationFrame(animationId);
-    }, []);
-
-    const allGains = [...gains, ...gains];
+    }, [isHovered]);
 
     return (
         <section className={styles.section}>
@@ -133,8 +138,8 @@ export default function WhatYouGain() {
                 {/* Carousel overlapping below */}
                 <div
                     className={styles.carouselArea}
-                    onMouseEnter={() => { isPausedRef.current = true; }}
-                    onMouseLeave={() => { isPausedRef.current = false; }}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
                 >
                     <div className={styles.carouselTrack} ref={trackRef}>
                         {allGains.map((gain, index) => (
