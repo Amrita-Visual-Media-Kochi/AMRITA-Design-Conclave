@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./schedule.module.css";
 import Footer from "../components/Footer";
@@ -11,7 +11,7 @@ const day1Events = [
         title: "Event Inauguration",
         type: "session",
         colorClass: "blue",
-        speakers: [{ name: "Anoop Ambika", role: "CEO, Kerala Startup Mission", image: "/assets/anoop.jpg", badge: "/assets/badge.png" }],
+        speakers: [{ name: "Anoop Ambika", role: "CEO, Kerala Startup Mission", tag: "Chief Guest" }],
     },
     {
         time: "11:00 AM - 11:15 AM",
@@ -26,10 +26,10 @@ const day1Events = [
         type: "panel",
         colorClass: "lavender",
         speakers: [
-            { name: "Kavya Baburaj", image: "/assets/kavya.jpg" },
-            { name: "Anil Reddy", image: "/assets/anil.jpg" },
-            { name: "Devika Panicker Prasad", image: "/assets/devika.jpg" },
-            { name: "Hiran Venugopalan", image: "/assets/hiran.jpg" },
+            { name: "Kavya Baburaj", image: "/people/Kavya Baburaj.jpg.jpeg" },
+            { name: "Anil Reddy", image: "/people/Anil Reddy.png" },
+            { name: "Devika Panicker Prasad", image: "/people/Devika Panicker Prasad.png" },
+            { name: "Hiran Venugopalan", image: "/people/Hiran Venugopalan.png" },
         ],
     },
     {
@@ -45,10 +45,10 @@ const day1Events = [
         type: "panel",
         colorClass: "lavender",
         speakers: [
-            { name: "Gourav Jaiswal", image: "/assets/gourav.jpg" },
-            { name: "Suleiman Ghori", image: "/assets/suleiman.jpg" },
-            { name: "Lijin Varghese", image: "/assets/lijin.jpg" },
-            { name: "Unni Banerji", image: "/assets/unni.jpg" },
+            { name: "Govind Janardhanan", image: "/people/Govind Janardhanan.png" },
+            { name: "Ben Thomas", image: "/people/Ben Thomas.jpeg" },
+            { name: "Udaya Kumar", image: "/people/Udaya Kumar.png" },
+            { name: "Vijay Raj N", image: "/people/Vijay Raj N.jpeg" },
         ],
     },
     {
@@ -58,7 +58,7 @@ const day1Events = [
         type: "session",
         colorClass: "yellow",
         speakers: [
-            { name: "Adobe Expert", placeholder: true },
+            { name: "Advin Netto", image: "/people/Advin Netto.png" },
         ],
     },
     {
@@ -67,7 +67,7 @@ const day1Events = [
         subtitle: "Expert Talk",
         type: "session",
         colorClass: "yellow",
-        speakers: [{ name: "Design Expert", placeholder: true }],
+        speakers: [{ name: "Design Expert", image: "/assets/reveal.svg" }],
     },
 ];
 
@@ -106,6 +106,26 @@ const day2Events = [
 
 export default function SchedulePage() {
     const [activeDay, setActiveDay] = useState<1 | 2>(1);
+    const timelineRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(styles.visible);
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            },
+            { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+        );
+
+        const items = timelineRef.current?.querySelectorAll(`.${styles.timelineItem}`);
+        items?.forEach((item) => observer.observe(item));
+
+        return () => observer.disconnect();
+    }, [activeDay]); // Re-observe when day changes
 
     return (
         <div className={styles.container}>
@@ -159,7 +179,7 @@ export default function SchedulePage() {
                         </div>
 
                         {/* Timeline */}
-                        <div className={styles.timeline}>
+                        <div className={styles.timeline} ref={timelineRef}>
                             {activeDay === 1 && (
                                 <>
                                     <div className={styles.dateHeader}>
@@ -186,22 +206,19 @@ export default function SchedulePage() {
                                                                         <Image
                                                                             src={speaker.image}
                                                                             alt={speaker.name}
-                                                                            width={80}
-                                                                            height={80}
+                                                                            width={180}
+                                                                            height={180}
                                                                             className={styles.speakerImage}
                                                                         />
                                                                     ) : (
                                                                         <div className={styles.speakerPlaceholder}></div>
                                                                     )}
                                                                 </div>
-                                                                <span className={styles.speakerName}>{speaker.name}</span>
+                                                                <div className={styles.speakerInfo}>
+                                                                    <span className={styles.speakerName}>{speaker.name}</span>
+                                                                    {speaker.tag && <span className={styles.speakerTag}>{speaker.tag}</span>}
+                                                                </div>
 
-                                                                {/* Floating Badge for 1st speaker */}
-                                                                {speaker.badge && (
-                                                                    <div className={styles.floatingBadge}>
-                                                                        <Image src={speaker.badge} alt="" width={40} height={40} />
-                                                                    </div>
-                                                                )}
                                                             </div>
                                                         ))}
                                                     </div>
