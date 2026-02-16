@@ -1,66 +1,80 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import WhatYouGain from "./components/WhatYouGain";
+import MeetTheVoices from "./components/MeetTheVoices";
+import WhatAreTheEvents from "./components/WhatAreTheEvents";
+import VenueSection from "./components/VenueSection";
+import GlimpsesSection from "./components/GlimpsesSection";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className={styles.container}>
+      <nav className={styles.navbar}>
+        <div className={styles.logo}>
+          <Image src="/assets/logoframe.svg" alt="ADC Logo" width={80} height={40} className={styles.logoImage} />
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className={styles.navLinks}>
+          <a href="#">About</a>
+          <a href="#">Event Schedule</a>
+          <a href="#">Sponsors</a>
+          <a href="#">Contact us</a>
+        </div>
+      </nav>
+
+      <main className={styles.hero}>
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>
+            Welcome to the <br /> Confluence of Creativity
+          </h1>
+          <p className={styles.heroSubtitle}>
+            A two day immersive conclave bringing students, designers, and industry professionals together to confront the real world of design beyond portfolios, beyond aesthetics, beyond theory.
+          </p>
+          <button className={styles.ctaButton}>Register Now</button>
         </div>
       </main>
+
+      <section className={styles.sponsors}>
+        <div className={styles.sponsorsGrid}>
+          {[1, 2, 3, 4, 5].map((_, index) => (
+            <div key={index} className={styles.sponsorPlaceholder}></div>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.featureSection}>
+        <div className={styles.featureCard}>
+          <Image
+            src="/assets/frame118.svg"
+            alt="Decoration"
+            width={120}
+            height={240}
+            className={styles.featureDecorationLeft}
+          />
+          <div className={styles.featureContent}>
+            <h2 className={styles.featureTitle}>
+              Bridging design education with real-world industry practice.
+            </h2>
+            <p className={styles.featureText}>
+              This conclave is built to expose aspiring designers to how design actually functions inside corporations, studios, startups, and freelance ecosystems. From invisible responsibilities and stakeholder pressure to compromises, constraints, and career trade-offs this is the side of design education that rarely gets discussed.
+            </p>
+          </div>
+          <Image
+            src="/assets/frame118.svg"
+            alt="Decoration"
+            width={120}
+            height={240}
+            className={styles.featureDecorationRight}
+          />
+        </div>
+      </section>
+
+      <WhatYouGain />
+      <MeetTheVoices />
+      <WhatAreTheEvents />
+      <VenueSection />
+      <GlimpsesSection />
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,172 @@
+.section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 0 clamp(1.5rem, 5vw, 5rem);
+    padding-bottom: 4rem;
+}
+
+/* Outer wrapper to contain image + overlapping carousel */
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+}
+
+/* Top image area */
+.topArea {
+    width: 100%;
+    height: 500px;
+    border-radius: 32px 32px 0 0;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 40%, #9333ea 100%);
+}
+
+.bgImage {
+    object-fit: cover;
+    object-position: center top;
+}
+
+.imageOverlay {
+    display: none;
+}
+
+.titleArea {
+    position: absolute;
+    top: 40%;
+    left: 3rem;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.quoteIcon {
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 700;
+    line-height: 1;
+    margin-top: -1rem;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+/* Carousel area - overlaps the image */
+.carouselArea {
+    position: relative;
+    margin-top: -12rem;
+    z-index: 3;
+    width: 100%;
+    border: 3px solid #6d28d9;
+    border-radius: 32px;
+    background: #ffffff;
+    padding: 3rem 0;
+    overflow: hidden;
+}
+
+.carouselTrack {
+    display: flex;
+    gap: 1.5rem;
+    will-change: transform;
+    padding: 0 1.5rem;
+}
+
+.card {
+    flex-shrink: 0;
+    width: 320px;
+    min-height: 180px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+}
+
+.cardIcon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+    .topArea {
+        height: 280px;
+        border-radius: 24px 24px 0 0;
+    }
+
+    .carouselArea {
+        border-radius: 0 0 24px 24px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .card {
+        width: 240px;
+        min-height: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .topArea {
+        height: 220px;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .carouselArea {
+        border-radius: 0 0 20px 20px;
+        padding: 1.5rem 0;
+        margin-top: -3rem;
+    }
+
+    .titleArea {
+        left: 1.5rem;
+        bottom: 4rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .quoteIcon {
+        font-size: 3.5rem;
+    }
+
+    .card {
+        width: 200px;
+        min-height: 120px;
+        padding: 1.5rem 1rem;
+    }
+
+    .cardTitle {
+        font-size: 1rem;
+    }
+}
