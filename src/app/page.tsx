@@ -16,8 +16,8 @@ export default function Home() {
         </div>
         <div className={styles.navLinks}>
           <a href="#">About</a>
-          <a href="#">Event Schedule</a>
-          <a href="#">Sponsors</a>
+          <a href="/schedule">Event Schedule</a>
+          <a href="/sponsors">Sponsors</a>
           <a href="#">Contact us</a>
         </div>
       </nav>

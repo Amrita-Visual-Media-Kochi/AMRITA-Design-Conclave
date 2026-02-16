@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem var(--site-padding);
+  padding: 1rem var(--site-padding);
   background-color: #ffffff;
   width: 100%;
   position: relative;
@@ -22,7 +22,7 @@
 .logo {
   display: flex;
   align-items: center;
-  height: 48px;
+  height: 32px;
   position: relative;
 }
 
@@ -157,7 +157,7 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 15px 0px #978cd0;
   max-width: 1200px;
   width: 100%;
-  padding: 6rem 4rem;
+  padding: 4rem 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,16 +186,16 @@
 }
 
 .featureTitle {
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(1.75rem, 4vw, 3rem);
   font-weight: 600;
   line-height: 1.3;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
   color: #000000;
 }
 
 .featureText {
-  font-size: clamp(0.9rem, 2vw, 1.125rem);
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
   line-height: 1.8;
   color: #555;
   max-width: 600px;

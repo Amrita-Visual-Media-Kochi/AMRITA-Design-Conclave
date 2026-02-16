@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./WhatYouGain.module.css";
 
@@ -84,7 +84,7 @@ function GainIcon({ type, color }: { type: string; color: string }) {
 
 export default function WhatYouGain() {
     const trackRef = useRef<HTMLDivElement>(null);
-    const [isPaused, setIsPaused] = useState(false);
+    const isPausedRef = useRef(false);
 
     useEffect(() => {
         const track = trackRef.current;
@@ -95,11 +95,11 @@ export default function WhatYouGain() {
         const speed = 0.5;
 
         const animate = () => {
-            if (!isPaused && track) {
+            if (!isPausedRef.current && track) {
                 scrollPos += speed;
                 const halfWidth = track.scrollWidth / 2;
                 if (scrollPos >= halfWidth) {
-                    scrollPos = 0;
+                    scrollPos -= halfWidth;
                 }
                 track.style.transform = `translateX(-${scrollPos}px)`;
             }
@@ -108,7 +108,7 @@ export default function WhatYouGain() {
 
         animationId = requestAnimationFrame(animate);
         return () => cancelAnimationFrame(animationId);
-    }, [isPaused]);
+    }, []);
 
     const allGains = [...gains, ...gains];
 
@@ -133,8 +133,8 @@ export default function WhatYouGain() {
                 {/* Carousel overlapping below */}
                 <div
                     className={styles.carouselArea}
-                    onMouseEnter={() => setIsPaused(true)}
-                    onMouseLeave={() => setIsPaused(false)}
+                    onMouseEnter={() => { isPausedRef.current = true; }}
+                    onMouseLeave={() => { isPausedRef.current = false; }}
                 >
                     <div className={styles.carouselTrack} ref={trackRef}>
                         {allGains.map((gain, index) => (
