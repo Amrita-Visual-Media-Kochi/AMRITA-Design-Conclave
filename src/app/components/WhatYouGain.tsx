@@ -1,38 +1,42 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import styles from "./WhatYouGain.module.css";
 
 const gains = [
     {
         icon: "grid",
         title: "Clarity on real-world design roles",
+        description: "Gain a clear understanding of the diverse roles in the design industry and where you fit in.",
         color: "#3B82F6",
     },
     {
         icon: "star",
         title: "Understanding of industry expectations",
+        description: "Learn what top companies look for in designers and working to meet those standards.",
         color: "#E11D48",
     },
     {
         icon: "sparkle",
         title: "Insight into everyday design responsibilities",
+        description: "Get a glimpse into the daily tasks and challenges faced by professional designers.",
         color: "#8B5CF6",
     },
     {
         icon: "circle",
         title: "Exposure to professional workflows",
+        description: "Discover the tools and processes used by successful design teams to deliver great work.",
         color: "#F97316",
     },
     {
         icon: "target",
         title: "Practical career guidance",
+        description: "Receive actionable advice on building your portfolio and navigating your career path.",
         color: "#6D28D9",
     },
 ];
 
 function GainIcon({ type, color }: { type: string; color: string }) {
+    // Icons remain the same...
     switch (type) {
         case "grid":
             return (
@@ -85,33 +89,38 @@ function GainIcon({ type, color }: { type: string; color: string }) {
 export default function WhatYouGain() {
     return (
         <section className={styles.section}>
-            <div className={styles.wrapper}>
-                {/* Left side: Image */}
-                <div className={styles.imageContainer}>
-                    <Image
-                        src="/assets/girlwithglasses.png"
-                        alt="What you gain"
-                        fill
-                        className={styles.image}
-                    />
-                    <div className={styles.imageOverlay}></div>
-                </div>
-
-                {/* Right side: Content */}
-                <div className={styles.contentContainer}>
-                    <h2 className={styles.title}>What you gain</h2>
-                    <div className={styles.grid}>
-                        {gains.map((gain, index) => (
-                            <div key={index} className={styles.card}>
-                                <div className={styles.cardIcon}>
-                                    <GainIcon type={gain.icon} color={gain.color} />
-                                </div>
-                                <h3 className={styles.cardTitle}>{gain.title}</h3>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+            <div className={styles.header}>
+                <h2 className={styles.title}>What You Gain</h2>
+                <p className={styles.subtitle}>Scroll down to stack the cards. Scroll back up to unstack them.</p>
             </div>
+            <ul
+                className={styles.cards}
+                id="cards"
+                style={{
+                    "--numcards": gains.length,
+                } as React.CSSProperties}
+            >
+                {gains.map((gain, index) => (
+                    <li
+                        key={index}
+                        className={styles.card}
+                        id={`card-${index + 1}`}
+                        style={{
+                            "--index": index + 1,
+                        } as React.CSSProperties}
+                    >
+                        <div className={styles.cardContent}>
+                            <div className={styles.textContent}>
+                                <h3 style={{ color: gain.color }}>{gain.title}</h3>
+                                <p>{gain.description}</p>
+                            </div>
+                            <div className={styles.iconContainer} style={{ backgroundColor: `${gain.color}10` }}>
+                                <GainIcon type={gain.icon} color={gain.color} />
+                            </div>
+                        </div>
+                    </li>
+                ))}
+            </ul>
         </section>
     );
 }

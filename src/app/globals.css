@@ -2,6 +2,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --font-content: var(--font-plus-jakarta-sans);
+  --site-padding: clamp(1rem, 5vw, 5rem);
 }
 
 @media (prefers-color-scheme: dark) {

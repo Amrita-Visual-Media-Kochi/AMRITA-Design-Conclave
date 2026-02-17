@@ -1,0 +1,47 @@
+.container {
+    position: fixed;
+    inset: 0;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loaderWrapper {
+    /* User requested rotating the Frame 90 degrees */
+    transform: rotate(90deg);
+    width: 150px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Animations for internal elements */
+.waveElement {
+    animation: straightLineAnim 2s ease-in-out infinite;
+    transform-box: fill-box;
+    /* centers transform on the element */
+    transform-origin: center;
+}
+
+@keyframes straightLineAnim {
+
+    0%,
+    100% {
+        transform: translateX(0px) scale(1);
+    }
+
+    50% {
+        transform: translateX(-20px) scale(1.1);
+        /* Move 'up' relative to vertical axis (now horizontal after rotation) */
+    }
+}

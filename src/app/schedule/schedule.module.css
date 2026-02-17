@@ -3,7 +3,7 @@
     flex-direction: column;
     min-height: 100vh;
     width: 100%;
-    --site-padding: clamp(1rem, 5vw, 5rem);
+
 }
 
 /* Navbar */

@@ -1,0 +1,174 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+
+}
+
+/* Navbar (Shared style) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem var(--site-padding);
+    background-color: transparent;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    position: relative;
+}
+
+.logoImage {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.navLinks {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.navLinks a {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+}
+
+.navLinks a:hover {
+    opacity: 0.8;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    min-height: 70vh;
+    /* Slightly shorter than home/sponsors maybe? Or match consistent 100vh? Sponsors used 100vh */
+    min-height: 70vh;
+    position: relative;
+    /* Use a similar background or distinct contact bg */
+    background-color: #1a1a1a;
+    background-image: url('/contactbg.jpg');
+    /* Placeholder if user adds one, or gradient */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem var(--site-padding) 4rem;
+    text-align: center;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+    z-index: 1;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.heroTitle {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.heroSubtitle {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 600px;
+}
+
+/* Content Section (Contact Details & Map) */
+.contentSection {
+    background-color: #ffffff;
+    padding: 4rem var(--site-padding);
+    color: #1a1a1a;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.infoBlock h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.infoBlock p {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.formContainer {
+    background: #f9fafb;
+    padding: 2rem;
+    border-radius: 1rem;
+    /* Placeholder for form look */
+    border: 1px solid #e5e7eb;
+}
+
+/* Decor Elements from Sponsors */
+.decorLeft,
+.decorRight {
+    position: absolute;
+    /* ... logic similar to sponsors if needed, or omit for cleaner contact page */
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .contentSection {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navLinks {
+        display: none;
+    }
+
+    .hero {
+        min-height: 50vh;
+        padding-top: 6rem;
+    }
+
+    .contentSection {
+        grid-template-columns: 1fr;
+        padding: 3rem var(--site-padding);
+    }
+}

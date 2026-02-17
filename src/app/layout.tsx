@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   description: "A two day immersive conclave bringing students, designers, and industry professionals together.",
 };
 
+import Preloader from "./components/Preloader";
+
+// ... existing imports
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={plusJakartaSans.variable}>
       <body className="antialiased">
+        <Preloader />
         {children}
       </body>
     </html>

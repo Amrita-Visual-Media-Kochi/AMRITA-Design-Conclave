@@ -70,7 +70,7 @@ const day1Events: Event[] = [
     {
         time: "2:30 PM - 3:30 PM",
         title: "Insight Session 1: ",
-        subtitle: "Q&A session with Adobe India",
+        subtitle: "QnA session with Advin Netto",
         type: "session",
         colorClass: "yellow",
         speakers: [
@@ -78,12 +78,20 @@ const day1Events: Event[] = [
         ],
     },
     {
-        time: "4:00 PM - 5:00 PM",
+        time: "3:30 PM - 4:30 PM",
         title: "Insight Session 2: ",
-        subtitle: "Expert Talk",
+        subtitle: "Operating System Level Artificial Intelligence for Healthcare in Smartphones",
         type: "session",
         colorClass: "yellow",
-        speakers: [{ name: "Design Expert", image: "/assets/reveal.svg" }],
+        speakers: [{ name: "Govind Janardhanan", image: "/people/Govind Janardhanan.png" }],
+    },
+    {
+        time: "3:30 PM - 4:30 PM",
+        title: "Insight Session 3: ",
+        subtitle: "AI for Communication Design",
+        type: "session",
+        colorClass: "yellow",
+        speakers: [{ name: "Sunil Prabhakar", image: "/people/Sunil Prabhakar.png" }],
     },
 ];
 
