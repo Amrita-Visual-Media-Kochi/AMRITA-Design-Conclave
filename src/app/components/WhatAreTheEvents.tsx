@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./WhatAreTheEvents.module.css";
 
 const topEvents = [
@@ -6,18 +7,21 @@ const topEvents = [
         title: "Panel Discussions",
         description:
             "Multiple industry perspectives in one conversation. Contrasting views on roles, realities, and career paths. Moderated to provide insight, not agreement.",
+        image: "/other/panel discussion.png",
     },
     {
         icon: "insights",
         title: "Insight Sessions",
         description:
             "Direct access to speakers. Ask the questions classrooms usually avoid. Honest answers, no gatekeeping.",
+        image: "/other/insight sessions.png",
     },
     {
         icon: "workshop",
         title: "Workshop",
         description:
             "Hands-on sessions by Kerala startup mission grounded in real workflows. Learn how design problems are actually approached and solved. Focused on process, not polish.",
+        image: "/other/workshop.png",
     },
 ];
 
@@ -27,12 +31,14 @@ const bottomEvents = [
         title: "Research paper presentation",
         description:
             "A platform for students and scholars to present research in design and related disciplines. Focused on inquiry, methodology, and evidence-based thinking.",
+        image: "/other/research paper presentation.png",
     },
     {
         icon: "exhibition",
         title: "Exhibition",
         description:
             "Curated displays of student work across design disciplines. Showcasing process, experimentation, and final outcomes. A space for peer review, feedback, and visibility.",
+        image: "/other/exhibition.png",
     },
 ];
 
@@ -91,7 +97,13 @@ export default function WhatAreTheEvents() {
                     {topEvents.map((event, index) => (
                         <div key={index} className={styles.card}>
                             <div className={styles.cardImage}>
-                                <div className={styles.placeholderImage}></div>
+                                <Image
+                                    src={event.image}
+                                    alt={event.title}
+                                    fill
+                                    className={styles.image}
+                                    style={{ objectFit: "cover" }}
+                                />
                             </div>
                             <div className={styles.cardContent}>
                                 <div className={styles.cardIcon}>
@@ -108,7 +120,13 @@ export default function WhatAreTheEvents() {
                     {bottomEvents.map((event, index) => (
                         <div key={index} className={styles.card}>
                             <div className={styles.cardImage}>
-                                <div className={styles.placeholderImage}></div>
+                                <Image
+                                    src={event.image}
+                                    alt={event.title}
+                                    fill
+                                    className={styles.image}
+                                    style={{ objectFit: "cover" }}
+                                />
                             </div>
                             <div className={styles.cardContent}>
                                 <div className={styles.cardIcon}>

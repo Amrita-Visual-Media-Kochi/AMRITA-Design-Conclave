@@ -56,11 +56,9 @@
 /* Hero */
 .hero {
     width: 100%;
-    min-height: 70vh;
+    min-height: 100vh;
     position: relative;
-    /* Replace this gradient with your actual image:
-       background-image: url('/assets/sponsors-hero.jpg'); */
-    background: linear-gradient(135deg, #7c3aed 0%, #9333ea 40%, #a855f7 100%);
+    background-image: url('/sponsersbg.jpg');
     background-size: cover;
     background-position: center;
     display: flex;

@@ -11,14 +11,13 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <nav className={styles.navbar}>
-        <div className={styles.logo}>
+        <a href="/" className={styles.logo}>
           <Image src="/assets/logoframe.svg" alt="ADC Logo" width={80} height={40} className={styles.logoImage} />
-        </div>
+        </a>
         <div className={styles.navLinks}>
-          <a href="#">About</a>
           <a href="/schedule">Event Schedule</a>
           <a href="/sponsors">Sponsors</a>
-          <a href="#">Contact us</a>
+          <a href="/#contact">Contact us</a>
         </div>
       </nav>
 

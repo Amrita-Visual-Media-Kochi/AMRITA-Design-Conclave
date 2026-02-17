@@ -1,219 +1,137 @@
 .section {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: #ffffff;
-    padding: 0 clamp(1rem, 5vw, 5rem);
-    padding-bottom: 4rem;
-    overflow-x: hidden;
-    /* Prevent horizontal scroll from cards */
+    padding: 5rem clamp(1rem, 5vw, 5rem);
+    display: flex;
+    justify-content: center;
 }
 
 .wrapper {
     width: 100%;
     max-width: 1200px;
-    position: relative;
-    /* Ensure shadows don't get cut off if they go outside */
+    display: flex;
+    gap: 3rem;
+    align-items: stretch;
+    /* Make both sides equal height */
 }
 
-/* ===== TOP IMAGE BANNER ===== */
-/* ===== TOP IMAGE BANNER ===== */
-.topArea {
-    width: 100%;
-    height: 500px;
-    border-radius: 32px;
+/* ===== LEFT: IMAGE ===== */
+.imageContainer {
+    flex: 1;
+    position: relative;
+    border-radius: 24px;
     overflow: hidden;
-    position: relative;
+    min-height: 400px;
     background-color: #f3f4f6;
-    /* Fallback color */
 }
 
-.bgImage {
+.image {
     object-fit: cover;
     object-position: center top;
+    transition: transform 0.6s ease;
 }
 
-.imageOverlay {
-    display: none;
+.imageContainer:hover .image {
+    transform: scale(1.05);
 }
 
-/* ===== TITLE ===== */
-.titleArea {
-    position: absolute;
-    top: 40%;
-    left: 4rem;
-    transform: translateY(-50%);
-    z-index: 2;
+/* ===== RIGHT: CONTENT ===== */
+.contentContainer {
+    flex: 1;
     display: flex;
-    align-items: center;
-    gap: 0.15rem;
-}
-
-.quoteIcon {
-    font-size: 8rem;
-    color: rgba(255, 255, 255, 0.25);
-    font-weight: 700;
-    line-height: 1;
-    margin-top: -3rem;
-    font-family: Georgia, "Times New Roman", serif;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .title {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 600;
-    color: #ffffff;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #1a1a1a;
     letter-spacing: -0.02em;
-    font-style: italic;
-    font-family: Georgia, "Times New Roman", serif;
 }
 
-/* ===== CAROUSEL ===== */
-/* ===== CAROUSEL ===== */
-.carouselArea {
-    position: relative;
-    margin-top: -120px;
-    z-index: 3;
-    width: 100%;
-    padding: 2rem 0 4rem 0;
-    overflow: hidden;
-    /* Clip content to the box size */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
-.carouselTrack {
-    display: flex;
-    gap: 2rem;
-    will-change: transform;
-    /* Removed padding and transition for seamless marquee */
-}
-
-/* ===== CARDS ===== */
+/* ===== CARD ===== */
 .card {
-    flex-shrink: 0;
-    width: 340px;
-    height: 200px;
     background: #ffffff;
-    border-radius: 20px;
-    padding: 2.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    position: relative;
-
-    /* The "Purple Box" Effect - using a hard shadow */
-    box-shadow: 8px 8px 0px #7c3aed;
-    border: 1px solid rgba(124, 58, 237, 0.1);
-    /* Subtle border for definition */
-
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 1rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 12px 12px 0px #6d28d9;
+    transform: translateX(4px);
+    border-color: #d1d5db;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .cardIcon {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #f9fafb;
+    border-radius: 8px;
 }
 
 .cardTitle {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 600;
-    color: #1a1a1a;
-    line-height: 1.3;
+    color: #374151;
+    line-height: 1.4;
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-    .topArea {
-        height: 400px;
-        border-radius: 24px;
-    }
-
-    .carouselArea {
-        margin-top: -80px;
-    }
-
-    .card {
-        width: 280px;
-        height: 180px;
-        padding: 2rem 1.5rem;
-        box-shadow: 6px 6px 0px #7c3aed;
-    }
-
-    .titleArea {
-        left: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .section {
-        padding: 0 clamp(1rem, 3vw, 2rem);
-        padding-bottom: 3rem;
-        overflow-x: hidden;
-    }
-
+@media (max-width: 900px) {
     .wrapper {
-        width: 100%;
+        flex-direction: column;
+        gap: 2rem;
     }
 
-    .topArea {
+    .imageContainer {
         height: 300px;
-        border-radius: 20px;
+        /* Specific height for mobile stack */
+        min-height: auto;
+        flex: none;
     }
 
-    .titleArea {
-        left: 1.5rem;
-        top: 40%;
-    }
-
-    .title {
-        font-size: 2rem;
-    }
-
-    .quoteIcon {
-        font-size: 4rem;
-        margin-top: -1.5rem;
-    }
-
-    .carouselArea {
-        margin-top: -60px;
-        padding-bottom: 2rem;
-    }
-
-    .carouselTrack {
-        gap: 1rem;
-        /* Padding removed for seamless loop */
-    }
-
-    .card {
-        width: 240px;
-        height: 150px;
-        padding: 1.5rem;
-        box-shadow: 5px 5px 0px #7c3aed;
-        border-radius: 16px;
-    }
-
-    .cardTitle {
-        font-size: 1rem;
+    .contentContainer {
+        flex: none;
     }
 }
 
 @media (max-width: 480px) {
-    .topArea {
-        height: 250px;
+    .section {
+        padding: 3rem clamp(1rem, 5vw, 5rem);
+    }
+
+    .title {
+        font-size: 1.75rem;
     }
 
     .card {
-        width: 200px;
-        height: 140px;
         padding: 1rem;
-        box-shadow: 4px 4px 0px #7c3aed;
+    }
+
+    .cardIcon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .cardTitle {
+        font-size: 0.95rem;
     }
 }

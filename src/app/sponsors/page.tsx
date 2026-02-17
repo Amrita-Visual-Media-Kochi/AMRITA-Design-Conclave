@@ -11,7 +11,7 @@ export default function SponsorsPage() {
                     <Image src="/assets/logoframe.svg" alt="ADC Logo" width={80} height={40} className={styles.logoImage} />
                 </a>
                 <div className={styles.navLinks}>
-                    <a href="/#schedule">Event Schedule</a>
+                    <a href="/schedule">Event Schedule</a>
                     <a href="/sponsors">Sponsors</a>
                     <a href="/#contact">Contact us</a>
                 </div>

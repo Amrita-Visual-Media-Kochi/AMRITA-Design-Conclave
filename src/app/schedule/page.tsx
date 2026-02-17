@@ -199,8 +199,14 @@ export default function SchedulePage() {
                             {activeDay === 1 && (
                                 <>
                                     <div className={styles.dateHeader}>
-                                        <span className={styles.dateIcon}>📅</span>
-                                        <span>Wednesday — Mar 5th 2026</span>
+                                        <Image
+                                            src="/shapes/CalendarDots.svg"
+                                            alt="Calendar"
+                                            width={24}
+                                            height={24}
+                                            className={styles.dateIcon}
+                                        />
+                                        <strong>Wednesday — Mar 5th 2026</strong>
                                     </div>
                                     {day1Events.map((event, index) => (
                                         <div
@@ -249,8 +255,14 @@ export default function SchedulePage() {
                             {activeDay === 2 && (
                                 <>
                                     <div className={styles.dateHeader}>
-                                        <span className={styles.dateIcon}>📅</span>
-                                        <span>Thursday — Mar 6th 2026</span>
+                                        <Image
+                                            src="/shapes/CalendarDots.svg"
+                                            alt="Calendar"
+                                            width={24}
+                                            height={24}
+                                            className={styles.dateIcon}
+                                        />
+                                        <strong>Thursday — Mar 6th 2026</strong>
                                     </div>
                                     {day2Events.map((event, index) => (
                                         <div
@@ -274,8 +286,14 @@ export default function SchedulePage() {
             <section className={styles.exhibitionSection}>
                 <div className={styles.exhibitionWrapper}>
                     <div className={styles.exhibitionDate}>
-                        <span className={styles.dateIcon}>📅</span>
-                        <span>5th - 6th Mar 2026</span>
+                        <Image
+                            src="/shapes/CalendarDots.svg"
+                            alt="Calendar"
+                            width={24}
+                            height={24}
+                            className={styles.dateIcon}
+                        />
+                        <strong>5th - 6th Mar 2026</strong>
                     </div>
                     <div className={styles.exhibitionCard}>
                         <div className={styles.exhibitionInfo}>

@@ -13,9 +13,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem var(--site-padding);
-  background-color: #ffffff;
+  background-color: transparent;
   width: 100%;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 10;
 }
 
@@ -23,13 +25,13 @@
   display: flex;
   align-items: center;
   height: 32px;
-  position: relative;
 }
 
 .logoImage {
   width: auto;
   height: 100%;
   object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .navLinks {
@@ -39,21 +41,21 @@
 }
 
 .navLinks a {
-  color: #1a1a1a;
+  color: #ffffff;
   font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.2s ease;
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease;
   white-space: nowrap;
 }
 
 .navLinks a:hover {
-  color: #6d28d9;
+  opacity: 0.8;
 }
 
 /* Hero */
 .hero {
   width: 100%;
-  min-height: calc(100vh - 96px);
+  min-height: 100vh;
   position: relative;
   background-image: url('/assets/herosection.png');
   background-size: cover;

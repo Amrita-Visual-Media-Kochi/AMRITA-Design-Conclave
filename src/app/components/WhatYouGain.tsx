@@ -83,66 +83,25 @@ function GainIcon({ type, color }: { type: string; color: string }) {
 }
 
 export default function WhatYouGain() {
-    const trackRef = useRef<HTMLDivElement>(null);
-    const [isHovered, setIsHovered] = useState(false);
-
-    // We duplicate the items to create a seamless loop
-    const allGains = [...gains, ...gains, ...gains];
-
-    const positionRef = useRef(0);
-
-    useEffect(() => {
-        const track = trackRef.current;
-        if (!track) return;
-
-        let animationId: number;
-        const speed = 0.5;
-
-        const animate = () => {
-            if (!isHovered && track) {
-                positionRef.current += speed;
-                const totalWidth = track.scrollWidth;
-                const singleSetWidth = totalWidth / 3;
-
-                if (positionRef.current >= singleSetWidth) {
-                    positionRef.current -= singleSetWidth;
-                }
-
-                track.style.transform = `translateX(-${positionRef.current}px)`;
-            }
-            animationId = requestAnimationFrame(animate);
-        };
-
-        animationId = requestAnimationFrame(animate);
-        return () => cancelAnimationFrame(animationId);
-    }, [isHovered]);
-
     return (
         <section className={styles.section}>
             <div className={styles.wrapper}>
-                {/* Top image banner */}
-                <div className={styles.topArea}>
+                {/* Left side: Image */}
+                <div className={styles.imageContainer}>
                     <Image
                         src="/assets/girlwithglasses.png"
                         alt="What you gain"
                         fill
-                        className={styles.bgImage}
+                        className={styles.image}
                     />
                     <div className={styles.imageOverlay}></div>
-                    <div className={styles.titleArea}>
-                        <span className={styles.quoteIcon}>&ldquo;</span>
-                        <h2 className={styles.title}>What you gain</h2>
-                    </div>
                 </div>
 
-                {/* Carousel overlapping below */}
-                <div
-                    className={styles.carouselArea}
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                >
-                    <div className={styles.carouselTrack} ref={trackRef}>
-                        {allGains.map((gain, index) => (
+                {/* Right side: Content */}
+                <div className={styles.contentContainer}>
+                    <h2 className={styles.title}>What you gain</h2>
+                    <div className={styles.grid}>
+                        {gains.map((gain, index) => (
                             <div key={index} className={styles.card}>
                                 <div className={styles.cardIcon}>
                                     <GainIcon type={gain.icon} color={gain.color} />
