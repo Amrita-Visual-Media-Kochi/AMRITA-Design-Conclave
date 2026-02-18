@@ -6,20 +6,12 @@ import WhatAreTheEvents from "./components/WhatAreTheEvents";
 import VenueSection from "./components/VenueSection";
 import GlimpsesSection from "./components/GlimpsesSection";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <nav className={styles.navbar}>
-        <a href="/" className={styles.logo}>
-          <Image src="/assets/logoframe.svg" alt="ADC Logo" width={80} height={40} className={styles.logoImage} />
-        </a>
-        <div className={styles.navLinks}>
-          <a href="/schedule">Event Schedule</a>
-          <a href="/sponsors">Sponsors</a>
-          <a href="/#contact">Contact us</a>
-        </div>
-      </nav>
+      <Navbar />
 
       <main className={styles.hero}>
         <div className={styles.heroContent}>

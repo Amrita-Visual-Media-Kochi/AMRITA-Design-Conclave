@@ -13,7 +13,7 @@ export default function SponsorsPage() {
                 <div className={styles.navLinks}>
                     <a href="/schedule">Event Schedule</a>
                     <a href="/sponsors">Sponsors</a>
-                    <a href="/#contact">Contact us</a>
+                    <a href="/contact">Contact us</a>
                 </div>
             </nav>
 

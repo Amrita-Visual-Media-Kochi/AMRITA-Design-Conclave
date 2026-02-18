@@ -1,7 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./WhatAreTheEvents.module.css";
 
-const topEvents = [
+const allEvents = [
     {
         icon: "panels",
         title: "Panel Discussions",
@@ -23,9 +25,6 @@ const topEvents = [
             "Hands-on sessions by Kerala startup mission grounded in real workflows. Learn how design problems are actually approached and solved. Focused on process, not polish.",
         image: "/other/workshop.png",
     },
-];
-
-const bottomEvents = [
     {
         icon: "research",
         title: "Research paper presentation",
@@ -41,6 +40,9 @@ const bottomEvents = [
         image: "/other/exhibition.png",
     },
 ];
+
+// Duplicate for infinite loop
+const duplicatedEvents = [...allEvents, ...allEvents];
 
 function EventIcon({ type }: { type: string }) {
     switch (type) {
@@ -93,50 +95,29 @@ export default function WhatAreTheEvents() {
             <div className={styles.wrapper}>
                 <h2 className={styles.title}>What are the events?</h2>
 
-                <div className={styles.topRow}>
-                    {topEvents.map((event, index) => (
-                        <div key={index} className={styles.card}>
-                            <div className={styles.cardImage}>
-                                <Image
-                                    src={event.image}
-                                    alt={event.title}
-                                    fill
-                                    className={styles.image}
-                                    style={{ objectFit: "cover" }}
-                                />
-                            </div>
-                            <div className={styles.cardContent}>
-                                <div className={styles.cardIcon}>
-                                    <EventIcon type={event.icon} />
+                <div className={styles.carouselGlobal}>
+                    <div className={styles.track}>
+                        {duplicatedEvents.map((event, index) => (
+                            <div key={index} className={styles.card}>
+                                <div className={styles.cardImage}>
+                                    <Image
+                                        src={event.image}
+                                        alt={event.title}
+                                        fill
+                                        className={styles.image}
+                                        style={{ objectFit: "cover" }}
+                                    />
                                 </div>
-                                <h3 className={styles.cardTitle}>{event.title}</h3>
-                                <p className={styles.cardDescription}>{event.description}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                <div className={styles.bottomRow}>
-                    {bottomEvents.map((event, index) => (
-                        <div key={index} className={styles.card}>
-                            <div className={styles.cardImage}>
-                                <Image
-                                    src={event.image}
-                                    alt={event.title}
-                                    fill
-                                    className={styles.image}
-                                    style={{ objectFit: "cover" }}
-                                />
-                            </div>
-                            <div className={styles.cardContent}>
-                                <div className={styles.cardIcon}>
-                                    <EventIcon type={event.icon} />
+                                <div className={styles.cardContent}>
+                                    <div className={styles.cardIcon}>
+                                        <EventIcon type={event.icon} />
+                                    </div>
+                                    <h3 className={styles.cardTitle}>{event.title}</h3>
+                                    <p className={styles.cardDescription}>{event.description}</p>
                                 </div>
-                                <h3 className={styles.cardTitle}>{event.title}</h3>
-                                <p className={styles.cardDescription}>{event.description}</p>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

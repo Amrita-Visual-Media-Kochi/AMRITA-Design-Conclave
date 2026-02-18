@@ -3,7 +3,7 @@ import styles from "./Footer.module.css";
 
 export default function Footer() {
     return (
-        <footer className={styles.footer}>
+        <footer id="contact" className={styles.footer}>
             {/* Rounded box containing CTA + footer links + copyright */}
             <div className={styles.box}>
                 {/* CTA area */}
