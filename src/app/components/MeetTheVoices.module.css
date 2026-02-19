@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     background-color: #ffffff;
-    padding: 4rem clamp(1rem, 5vw, 5rem);
+    padding: 4rem var(--site-padding);
     position: relative;
     z-index: 10;
     /* Ensure it sits below the pinned section (z-50) if overlap occurs */
@@ -131,7 +131,7 @@
 
 @media (max-width: 768px) {
     .section {
-        padding: 2rem clamp(1rem, 5vw, 5rem);
+        padding: 2rem var(--site-padding);
     }
 
     .grid {

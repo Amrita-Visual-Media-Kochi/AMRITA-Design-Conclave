@@ -289,10 +289,11 @@
 }
 
 .yellow {
-    background-color: #fffacd;
+    background-color: #BB980020;
+    /* Muted gold with transparency */
     border-radius: 12px;
     padding: 1.5rem;
-    border: none;
+    border: 1px solid #BB980040;
     margin-bottom: 1rem;
 }
 

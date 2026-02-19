@@ -10,7 +10,7 @@ export default function Footer() {
                 <div className={styles.ctaArea}>
                     <Image src="/assets/shapes/Vector Star.svg" alt="" width={63} height={63} className={styles.decorTopRight} />
                     <h2 className={styles.ctaTitle}>
-                        Be part of the conversation shaping tomorrow&rsquo;s designers.
+                        Be part of the conversation shaping<br />tomorrow&rsquo;s designers.
                     </h2>
                     <Image src="/assets/shapes/Vector (1).svg" alt="" width={63} height={63} className={styles.decorLeftIcon} />
                     <button className={styles.ctaButton}>Register now</button>
@@ -73,7 +73,8 @@ export default function Footer() {
                 </div>
 
                 <div className={styles.copyright}>
-                    © 2026 Design Conclave. All rights reserved.
+                    <Image src="/assets/asas_logo.png" alt="ASAS Logo" width={120} height={40} className={styles.asasLogo} />
+                    <span>© 2026 Design Conclave. All rights reserved.</span>
                 </div>
             </div>
 

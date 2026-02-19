@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import WhatYouGain from "./components/WhatYouGain";
@@ -8,6 +11,12 @@ import GlimpsesSection from "./components/GlimpsesSection";
 import Footer from "./components/Footer";
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className={styles.container}>
       <nav className={styles.navbar}>
@@ -19,7 +28,22 @@ export default function Home() {
           <a href="/sponsors">Sponsors</a>
           <a href="/contact">Contact us</a>
         </div>
+        <button className={styles.hamburger} onClick={toggleMenu} aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ""}`}>
+        <button className={styles.closeButton} onClick={toggleMenu} aria-label="Close menu">
+          &times;
+        </button>
+        <a href="/schedule" onClick={toggleMenu}>Event Schedule</a>
+        <a href="/sponsors" onClick={toggleMenu}>Sponsors</a>
+        <a href="/contact" onClick={toggleMenu}>Contact us</a>
+      </div>
 
       <main className={styles.hero}>
         <div className={styles.heroContent}>

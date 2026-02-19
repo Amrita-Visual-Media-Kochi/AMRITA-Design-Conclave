@@ -1,7 +1,7 @@
 .section {
     width: 100%;
     background-color: #ffffff;
-    padding: 5rem clamp(1.5rem, 5vw, 5rem);
+    padding: 5rem var(--site-padding);
     display: flex;
     justify-content: center;
 }

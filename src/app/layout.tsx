@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 };
 
 import Preloader from "./components/Preloader";
+import BackToTop from "./components/BackToTop";
 
 // ... existing imports
 
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className="antialiased">
         <Preloader />
         {children}
+        <BackToTop />
       </body>
     </html>
   );

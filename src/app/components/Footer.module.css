@@ -1,18 +1,18 @@
 .footer {
     width: 100%;
-    padding: 2rem clamp(1rem, 5vw, 5rem) 0;
+    padding: 2rem var(--site-padding) 0;
     background-color: #ffffff;
 }
 
 /* Main rounded box */
 .box {
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     border: none;
     border-radius: 0 0 32px 32px;
     background-color: #ffffff;
     overflow: visible;
-    padding: 0 3rem;
+    padding: 0 var(--site-padding);
     position: relative;
     z-index: 2;
 }
@@ -37,17 +37,21 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    padding: 5rem 2rem 4rem;
+    padding: 7rem 2rem 6rem;
+    /* Increased padding */
 }
 
 .ctaTitle {
-    font-size: clamp(1.75rem, 5vw, 3.5rem);
-    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 4rem);
+    /* 64px is 4rem */
+    font-weight: 600;
     color: #000000;
     text-align: center;
-    line-height: 1.25;
-    letter-spacing: -0.02em;
-    max-width: 700px;
+    line-height: 1;
+    /* 100% */
+    letter-spacing: 0;
+    max-width: 1100px;
+    /* Increased to allow proper wrapping */
 }
 
 .ctaButton {
@@ -176,17 +180,25 @@
 }
 
 .copyright {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: 0.8rem;
     color: #aaa;
     padding: 1.5rem 0 2rem;
     border-top: 1px solid #eee;
 }
 
+.asasLogo {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
 /* Watermark - overlaps behind the box */
 .watermark {
     width: 100vw;
-    margin-left: calc(-1 * clamp(1rem, 5vw, 5rem));
+    margin-left: calc(-1 * var(--site-padding));
     background: linear-gradient(180deg, #c4b5e3 0%, #7c5cbf 100%);
     display: flex;
     align-items: center;

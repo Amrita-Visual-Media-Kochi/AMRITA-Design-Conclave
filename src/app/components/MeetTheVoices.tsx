@@ -62,6 +62,12 @@ const speakers = [
         company: "Tata Communications",
         image: "/people/Hiran Venugopalan.png"
     },
+    {
+        name: "Sunil Prabhakar",
+        role: "Consultant",
+        company: "AI and Digital Practices",
+        image: "/people/Sunil Prabhakar.png"
+    },
 ];
 
 export default function MeetTheVoices() {
