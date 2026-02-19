@@ -1,12 +1,17 @@
 .container {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background-color: #ffffff;
-    z-index: 9999;
+    z-index: 99999;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+    gap: 2rem;
+    transition: opacity 0.8s cubic-bezier(0.76, 0, 0.24, 1), visibility 0.8s;
 }
 
 .hidden {
@@ -15,33 +20,79 @@
     pointer-events: none;
 }
 
-.loaderWrapper {
-    /* User requested rotating the Frame 90 degrees */
-    transform: rotate(90deg);
-    width: 150px;
-    height: auto;
+.loaderContent {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    gap: 2rem;
 }
 
-/* Animations for internal elements */
-.waveElement {
-    animation: straightLineAnim 2s ease-in-out infinite;
-    transform-box: fill-box;
-    /* centers transform on the element */
-    transform-origin: center;
+.logo {
+    width: 180px;
+    height: auto;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards, pulse 3s ease-in-out infinite 0.8s;
 }
 
-@keyframes straightLineAnim {
+.progressBar {
+    width: 200px;
+    height: 4px;
+    background-color: #f0f0f0;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 0.3s forwards;
+}
+
+.progressFill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #6d28d9, #9d7bd9);
+    border-radius: 2px;
+    animation: loadProgress 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards 0.5s;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
 
     0%,
     100% {
-        transform: translateX(0px) scale(1);
+        transform: scale(1);
     }
 
     50% {
-        transform: translateX(-20px) scale(1.1);
-        /* Move 'up' relative to vertical axis (now horizontal after rotation) */
+        transform: scale(1.03);
+    }
+}
+
+@keyframes loadProgress {
+    0% {
+        width: 0%;
+    }
+
+    40% {
+        width: 60%;
+    }
+
+    100% {
+        width: 100%;
     }
 }

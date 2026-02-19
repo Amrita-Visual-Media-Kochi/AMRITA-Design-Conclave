@@ -21,69 +21,78 @@ export default function ContactPage() {
             <section className={styles.hero}>
                 <div className={styles.heroOverlay}></div>
                 <div className={styles.heroContent}>
-                    <h1 className={styles.heroTitle}>Contact Us</h1>
-                    <p className={styles.heroSubtitle}>
-                        Have questions or want to collaborate? We'd love to hear from you.
-                        Reach out to the Amrita Design Conclave team for any inquiries.
-                    </p>
+                    <h1 className={styles.heroTitle}>Contact us</h1>
                 </div>
             </section>
 
-            {/* Content Section (Matches Announcement Section Style) */}
+            {/* Content Section */}
             <section className={styles.contentSection}>
-                {/* Decor images if desired, currently hidden in CSS but structure kept for parity */}
-                {/* 
-                <Image
-                    src="/assets/frame118.svg"
-                    alt=""
-                    width={200}
-                    height={400}
-                    className={styles.decorLeft}
-                />
-                */}
-
-                <div className={styles.contactInfo}>
-                    <div className={styles.infoBlock}>
-                        <h3>General Inquiries</h3>
-                        <p>Email: designconclave@amrita.edu</p>
-                        <p>Phone: +91 123 456 7890</p>
-                    </div>
-
-                    <div className={styles.infoBlock}>
-                        <h3>Location</h3>
-                        <p>
-                            Amrita Vishwa Vidyapeetham,<br />
-                            Amritapuri Campus,<br />
-                            Clappana P.O., Kollam - 690525,<br />
-                            Kerala, India
+                <div className={styles.contentContainer}>
+                    {/* Left Column: Info */}
+                    <div className={styles.infoColumn}>
+                        <h2 className={styles.infoTitle}>
+                            For Queries &<br />Collaborations
+                        </h2>
+                        <p className={styles.infoText}>
+                            For sponsorship discussions, institutional partnerships, media coverage,
+                            speaker inquiries, or any clarifications regarding the event, the organizing team
+                            can be reached through the details below.
                         </p>
+                        <p className={styles.infoText}>
+                            We welcome meaningful collaborations aligned with the vision of Design Conclave.
+                        </p>
+
+                        <div className={styles.contactIcons}>
+                            {/* Email Icon */}
+                            <a href="mailto:designconclave@amrita.edu" className={styles.iconButton}>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                </svg>
+                            </a>
+                            {/* Phone Icon */}
+                            <a href="tel:+911234567890" className={styles.iconButton}>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </a>
+                            {/* Instagram Icon */}
+                            <a href="#" className={styles.iconButton}>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
 
-                    <div className={styles.infoBlock}>
-                        <h3>Socials</h3>
-                        <p>Follow us for updates on Instagram, LinkedIn, and Twitter.</p>
-                    </div>
-                </div>
+                    {/* Right Column: Form */}
+                    <div className={styles.formColumn}>
+                        <form>
+                            <div className={styles.formGrid}>
+                                <div className={styles.formGroup}>
+                                    <label className={styles.label}>First name</label>
+                                    <input type="text" placeholder="Enter your first name" className={styles.input} />
+                                </div>
+                                <div className={styles.formGroup}>
+                                    <label className={styles.label}>Last name</label>
+                                    <input type="text" placeholder="Enter your last name" className={styles.input} />
+                                </div>
+                            </div>
 
-                <div className={styles.formContainer}>
-                    <h3>Send us a message</h3>
-                    <p style={{ marginTop: '1rem', color: '#666' }}>
-                        (Form integration coming soon)
-                    </p>
-                    {/* Placeholder for form fields */}
-                    <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                        <input type="text" placeholder="Name" style={{ padding: '0.75rem', border: '1px solid #ddd', borderRadius: '0.5rem' }} />
-                        <input type="email" placeholder="Email" style={{ padding: '0.75rem', border: '1px solid #ddd', borderRadius: '0.5rem' }} />
-                        <textarea placeholder="Message" rows={4} style={{ padding: '0.75rem', border: '1px solid #ddd', borderRadius: '0.5rem' }}></textarea>
-                        <button style={{
-                            padding: '0.75rem 2rem',
-                            background: '#000',
-                            color: '#fff',
-                            border: 'none',
-                            borderRadius: '0.5rem',
-                            cursor: 'pointer',
-                            fontWeight: '600'
-                        }}>Send Message</button>
+                            <div className={styles.formGroup}>
+                                <label className={styles.label}>Email</label>
+                                <input type="email" placeholder="Enter your email address" className={styles.input} />
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <label className={styles.label}>How can we help you?</label>
+                                <textarea placeholder="Enter your message" className={styles.input} rows={4}></textarea>
+                            </div>
+
+                            <button type="submit" className={styles.submitButton}>Send message</button>
+                        </form>
                     </div>
                 </div>
             </section>

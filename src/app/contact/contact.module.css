@@ -4,7 +4,7 @@
     min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
-
+    /* Uses global --site-padding from globals.css */
 }
 
 /* Navbar (Shared style) */
@@ -25,7 +25,6 @@
     display: flex;
     align-items: center;
     height: 32px;
-    position: relative;
 }
 
 .logoImage {
@@ -53,107 +52,195 @@
     opacity: 0.8;
 }
 
+
 /* Hero Section */
 .hero {
     width: 100%;
-    min-height: 70vh;
-    /* Slightly shorter than home/sponsors maybe? Or match consistent 100vh? Sponsors used 100vh */
-    min-height: 70vh;
+    min-height: 50vh;
     position: relative;
-    /* Use a similar background or distinct contact bg */
-    background-color: #1a1a1a;
-    background-image: url('/contactbg.jpg');
-    /* Placeholder if user adds one, or gradient */
+    background-image: url('/contact.png');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 8rem var(--site-padding) 4rem;
-    text-align: center;
+    padding: 6rem var(--site-padding) 4rem;
+    justify-content: flex-start;
 }
 
 .heroOverlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
     z-index: 1;
 }
 
 .heroContent {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    padding-left: var(--site-padding);
     color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
 }
 
 .heroTitle {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(3rem, 6vw, 4.5rem);
     font-weight: 700;
-    line-height: 1.15;
+    line-height: 1.1;
 }
 
-.heroSubtitle {
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
-    line-height: 1.6;
-    opacity: 0.9;
-    max-width: 600px;
-}
 
-/* Content Section (Contact Details & Map) */
+/* Content Section */
 .contentSection {
     background-color: #ffffff;
-    padding: 4rem var(--site-padding);
-    color: #1a1a1a;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
+    width: 100%;
+    /* Full width background */
+    display: flex;
+    justify-content: center;
+    padding: 6rem var(--site-padding);
 }
 
-.contactInfo {
+.contentContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 columns */
+    gap: 6rem;
+    align-items: start;
+    width: 100%;
+    max-width: 1400px;
+    /* Constrained content width */
+}
+
+/* Left Column: Info */
+.infoColumn {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.infoBlock h3 {
-    font-size: 1.5rem;
+.infoTitle {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
     font-weight: 700;
-    margin-bottom: 0.5rem;
     color: #000;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
 }
 
-.infoBlock p {
+.infoText {
     font-size: 1rem;
-    color: #4b5563;
     line-height: 1.6;
+    color: #666;
+    max-width: 500px;
 }
 
-.formContainer {
-    background: #f9fafb;
-    padding: 2rem;
-    border-radius: 1rem;
-    /* Placeholder for form look */
+.contactIcons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.iconButton {
+    width: 48px;
+    height: 48px;
     border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    transition: all 0.2s ease;
+    background: #f9fafb;
 }
 
-/* Decor Elements from Sponsors */
-.decorLeft,
-.decorRight {
-    position: absolute;
-    /* ... logic similar to sponsors if needed, or omit for cleaner contact page */
-    display: none;
+.iconButton:hover {
+    background: #f3f4f6;
+    color: #000;
+    border-color: #d1d5db;
 }
+
+
+/* Right Column: Form */
+.formColumn {
+    background: #f4f4f5;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.formGroup.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 0.95rem;
+    color: #000;
+    transition: all 0.2s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #6d28d9;
+    box-shadow: 0 0 0 2px rgba(109, 40, 217, 0.1);
+}
+
+.input::placeholder {
+    color: #aaa;
+}
+
+textarea.input {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submitButton {
+    background-color: #5b4d9c;
+    color: #ffffff;
+    border: none;
+    padding: 0.85rem 2rem;
+    border-radius: 9999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 1rem;
+}
+
+.submitButton:hover {
+    background-color: #4c3f85;
+}
+
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .contentSection {
-        gap: 2rem;
+    .contentContainer {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .heroTitle {
+        font-size: 3rem;
     }
 }
 
@@ -163,12 +250,19 @@
     }
 
     .hero {
-        min-height: 50vh;
-        padding-top: 6rem;
+        min-height: 40vh;
     }
 
-    .contentSection {
+    .formColumn {
+        padding: 1.5rem;
+    }
+
+    .formGrid {
         grid-template-columns: 1fr;
-        padding: 3rem var(--site-padding);
+        gap: 0;
+    }
+
+    .infoTitle {
+        font-size: 2rem;
     }
 }
