@@ -309,55 +309,7 @@ export default function SchedulePage() {
                             <h3 className={styles.exhibitionTitle}>Exhibition</h3>
                         </div>
                         <div className={styles.exhibitionFrameWrap}>
-                            <Image
-                                src="/assets/images/frame-decoration.svg"
-                                alt=""
-                                width={280}
-                                height={140}
-                                className={styles.exhibitionFrame}
-                            />
-                            <Image
-                                src="/assets/images/frame-decoration.svg"
-                                alt=""
-                                width={280}
-                                height={140}
-                                className={styles.exhibitionFrame}
-                            />
-                            <Image
-                                src="/assets/images/frame-decoration.svg"
-                                alt=""
-                                width={280}
-                                height={140}
-                                className={styles.exhibitionFrame}
-                            />
-                            <Image
-                                src="/assets/images/frame-decoration.svg"
-                                alt=""
-                                width={280}
-                                height={140}
-                                className={styles.exhibitionFrame}
-                            />
-                            <Image
-                                src="/assets/images/frame-decoration.svg"
-                                alt=""
-                                width={280}
-                                height={140}
-                                className={styles.exhibitionFrame}
-                            />
-                            <Image
-                                src="/assets/images/frame-decoration.svg"
-                                alt=""
-                                width={280}
-                                height={140}
-                                className={styles.exhibitionFrame}
-                            />
-                            <Image
-                                src="/assets/images/frame-decoration.svg"
-                                alt=""
-                                width={280}
-                                height={140}
-                                className={styles.exhibitionFrame}
-                            />
+                            {/* Pattern set via CSS background */}
                         </div>
                     </div>
                 </div>

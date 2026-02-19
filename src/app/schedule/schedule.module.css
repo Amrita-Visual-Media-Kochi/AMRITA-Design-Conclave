@@ -478,19 +478,19 @@
     justify-content: flex-end;
     align-items: center;
     overflow: hidden;
-    min-height: 120px;
+    min-height: 200px;
+    /* Increased height */
     height: 100%;
+    background-image: url('/assets/images/frame-166.svg');
+    background-size: auto 100%;
+    /* Height matching (bigger) */
+    background-repeat: round no-repeat;
+    /* 'round' stretches to fit width perfectly */
+    background-position: left center;
+    /* Aligns start */
 }
 
-.exhibitionFrame {
-    width: auto;
-    height: 100%;
-    min-width: 140px;
-    /* Ensure they don't shrink too much */
-    object-fit: cover;
-    flex-shrink: 0;
-    /* Prevent images from squishing */
-}
+/* .exhibitionFrame removed as it's handled by background-image */
 
 /* ========== RESPONSIVE ========== */
 

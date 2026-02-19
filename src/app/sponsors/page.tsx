@@ -35,7 +35,7 @@ export default function SponsorsPage() {
             {/* Partner Announcements Section */}
             <section className={styles.announcementSection}>
                 <Image
-                    src="/assets/frame118.svg"
+                    src="/assets/images/frame-decoration.svg"
                     alt=""
                     width={200}
                     height={400}
@@ -52,7 +52,7 @@ export default function SponsorsPage() {
                     </p>
                 </div>
                 <Image
-                    src="/assets/frame118.svg"
+                    src="/assets/images/frame-decoration.svg"
                     alt=""
                     width={200}
                     height={400}

@@ -4,6 +4,9 @@
     justify-content: center;
     background-color: #ffffff;
     padding: 4rem clamp(1rem, 5vw, 5rem);
+    position: relative;
+    z-index: 10;
+    /* Ensure it sits below the pinned section (z-50) if overlap occurs */
 }
 
 .wrapper {

@@ -214,8 +214,10 @@
     width: 80%;
     max-width: 900px;
     height: auto;
-    opacity: 0.5;
-    filter: brightness(2);
+    opacity: 0.9;
+    /* Increased opacity */
+    filter: brightness(0) invert(1);
+    /* Force white */
     user-select: none;
 }
 

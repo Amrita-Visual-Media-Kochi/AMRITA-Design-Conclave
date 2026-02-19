@@ -2,116 +2,125 @@
 
 .section {
     width: 100%;
-    background-color: #ffffff;
-    color: #1a1a1a;
-    padding-bottom: 20vh;
-    padding-top: 4rem;
+    height: 100vh;
+    /* Viewport height for pinning */
     position: relative;
-    /* Default variables if not set inline */
-    --card-top-offset: 1em;
-    --card-margin: 4vh;
-}
-
-.header {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto 4rem auto;
-    text-align: center;
-    padding: 0 clamp(1rem, 5vw, 2rem);
+    /* background: linear-gradient(135deg, #a855f7 0%, #d946ef 100%); */
+    /* Moved to bgContainer */
+    background: #ffffff;
+    /* Set to white to remove black borders */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    z-index: 50;
+    /* Ensure high z-index to stay above other sections */
+    padding: 1rem;
+    /* Inset the whole section */
+    overflow: hidden;
+    /* Clip contents */
+}
+
+.bgContainer {
+    position: absolute;
+    top: 1rem;
+    /* Inset top */
+    left: 1rem;
+    /* Inset left */
+    width: calc(100% - 2rem);
+    /* Inset width */
+    height: calc(100% - 2rem);
+    /* Inset height */
+    z-index: 0;
+    border-radius: 3rem;
+    /* Large rounded corners */
+    overflow: hidden;
+    background: linear-gradient(135deg, #a855f7 0%, #d946ef 100%);
+    /* Purple background */
+}
+
+.bgImage {
+    object-fit: cover;
+    object-position: top center;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
 }
 
 .title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
-    color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 8vh;
+    /* Adjusted for inset */
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.subtitle {
-    font-size: 1.125rem;
-    color: #4b5563;
-    max-width: 600px;
-}
-
-.cards {
-    list-style: none;
-    max-width: 900px;
-    margin: 0 auto 0 auto;
-    padding: 0 1rem;
-    /* Create space at bottom for scrolling past */
-    padding-bottom: calc(var(--numcards) * var(--card-top-offset) + 20vh);
-    display: flex;
-    flex-direction: column;
-    gap: var(--card-margin);
+.cardsContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .card {
-    position: sticky;
-    top: 120px;
-    /* Viewport top offset */
-    padding-top: calc(var(--index) * var(--card-top-offset));
-    margin-bottom: var(--card-margin);
-
-    /* Animation variables */
-    --index0: calc(var(--index) - 1);
-    --reverse-index: calc(var(--numcards) - var(--index0));
-    --reverse-index0: calc(var(--reverse-index) - 1);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 150%;
+    /* Start off-screen bottom */
+    width: 90%;
+    max-width: 700px;
+    /* Slightly wider */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
 }
 
 .cardContent {
-    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
-    background: #fffaf2;
-    /* Light creamy bg from reference, or #ffffff */
     background: #ffffff;
     color: #1a1a1a;
-    border-radius: 1.5rem;
+    border-radius: 2.5rem;
+    /* More rounded */
     overflow: hidden;
-    padding: 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    border: 1px solid #e5e7eb;
-
-    /* Animation logic */
-    transform-origin: 50% 0%;
-    will-change: transform;
-}
-
-/* Scaling Animation */
-@keyframes scale {
-    to {
-        transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
-    }
-}
-
-@supports (animation-timeline: view()) {
-    .cardContent {
-        --duration: calc(var(--reverse-index0) * 1s);
-        --delay: calc(var(--index0) * 1s);
-
-        animation: scale linear forwards;
-        animation-timeline: view();
-        animation-range: entry-crossing exit-crossing;
-        /* Adjust range to match scroll behavior if needed */
-    }
-}
-
-
-.textContent {
-    flex: 1;
+    position: relative;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-height: 500px;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    justify-content: space-between;
+}
+
+.cardBody {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.iconWrapper {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .textContent h3 {
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: 700;
     line-height: 1.2;
+    color: #000;
+    margin-bottom: 0.5rem;
 }
 
 .textContent p {
@@ -120,31 +129,32 @@
     color: #4b5563;
 }
 
-.iconContainer {
-    width: 80px;
-    height: 80px;
-    flex-shrink: 0;
+.cardFooter {
+    width: 100%;
+    margin-top: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
+    align-items: flex-end;
+}
+
+.decorationImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+    .title {
+        margin-top: 10vh;
+        font-size: 2.5rem;
+    }
+
     .cardContent {
-        flex-direction: column-reverse;
-        align-items: flex-start;
-        padding: 1.5rem;
+        min-height: 350px;
     }
 
-    .iconContainer {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 1rem;
-    }
-
-    .textContent h3 {
-        font-size: 1.25rem;
+    .cardBody {
+        padding: 2rem;
     }
 }

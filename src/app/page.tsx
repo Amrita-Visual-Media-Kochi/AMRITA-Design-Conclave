@@ -44,7 +44,7 @@ export default function Home() {
       <section className={styles.featureSection}>
         <div className={styles.featureCard}>
           <Image
-            src="/assets/frame118.svg"
+            src="/assets/images/frame-117.svg"
             alt="Decoration"
             width={120}
             height={240}
@@ -59,7 +59,7 @@ export default function Home() {
             </p>
           </div>
           <Image
-            src="/assets/frame118.svg"
+            src="/assets/images/frame-118.svg"
             alt="Decoration"
             width={120}
             height={240}

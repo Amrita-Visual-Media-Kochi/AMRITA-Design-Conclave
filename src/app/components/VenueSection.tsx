@@ -22,7 +22,14 @@ export default function VenueSection() {
                         equipped with seminar halls, presentation infrastructure, and focused
                         discussion spaces ideal for keynotes, panels, and interactive sessions.
                     </p>
-                    <a href="#" className={styles.button}>Get Directions</a>
+                    <a
+                        href="https://maps.app.goo.gl/V3oAdsfHLiEzoTuF9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.button}
+                    >
+                        Get Directions
+                    </a>
                 </div>
                 <div className={styles.right}>
                     <div className={styles.imageFrame}>
