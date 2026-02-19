@@ -1,8 +1,50 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./contact.module.css";
 import Footer from "../components/Footer";
+import { FormEvent, useState } from "react";
 
 export default function ContactPage() {
+    const [status, setStatus] = useState<string>("");
+
+    // PASTE YOUR GOOGLE SCRIPT URL HERE
+    const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_SCRIPT_URL_HERE";
+
+    async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+
+        if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL === "YOUR_GOOGLE_SCRIPT_URL_HERE") {
+            alert("Please configure the Google Script URL in src/app/contact/page.tsx first!");
+            return;
+        }
+
+        setStatus("Sending...");
+
+        const formData = new FormData(e.currentTarget);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8",
+                },
+            });
+
+            if (response.ok) {
+                setStatus("Message sent successfully!");
+                (e.target as HTMLFormElement).reset();
+            } else {
+                setStatus("Error sending message. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            setStatus("Error sending message. Check console.");
+        }
+    }
+
     return (
         <div className={styles.container}>
             {/* Navbar */}
@@ -69,29 +111,30 @@ export default function ContactPage() {
 
                     {/* Right Column: Form */}
                     <div className={styles.formColumn}>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <div className={styles.formGrid}>
                                 <div className={styles.formGroup}>
                                     <label className={styles.label}>First name</label>
-                                    <input type="text" placeholder="Enter your first name" className={styles.input} />
+                                    <input name="firstName" type="text" placeholder="Enter your first name" className={styles.input} required />
                                 </div>
                                 <div className={styles.formGroup}>
                                     <label className={styles.label}>Last name</label>
-                                    <input type="text" placeholder="Enter your last name" className={styles.input} />
+                                    <input name="lastName" type="text" placeholder="Enter your last name" className={styles.input} required />
                                 </div>
                             </div>
 
                             <div className={styles.formGroup}>
                                 <label className={styles.label}>Email</label>
-                                <input type="email" placeholder="Enter your email address" className={styles.input} />
+                                <input name="email" type="email" placeholder="Enter your email address" className={styles.input} required />
                             </div>
 
                             <div className={styles.formGroup}>
                                 <label className={styles.label}>How can we help you?</label>
-                                <textarea placeholder="Enter your message" className={styles.input} rows={4}></textarea>
+                                <textarea name="message" placeholder="Enter your message" className={styles.input} rows={4} required></textarea>
                             </div>
 
                             <button type="submit" className={styles.submitButton}>Send message</button>
+                            {status && <div style={{ marginTop: '1rem', color: '#6d28d9', fontWeight: 600 }}>{status}</div>}
                         </form>
                     </div>
                 </div>

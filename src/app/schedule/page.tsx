@@ -42,7 +42,7 @@ const day1Events: Event[] = [
         type: "panel",
         colorClass: "lavender",
         speakers: [
-            { name: "Kavya Baburaj", image: "/people/Kavya Baburaj.jpg.jpeg" },
+            { name: "Kavya Baburaj" },
             { name: "Anil Reddy", image: "/people/Anil Reddy.png" },
             { name: "Devika Panicker Prasad", image: "/people/Devika Panicker Prasad.png" },
             { name: "Hiran Venugopalan", image: "/people/Hiran Venugopalan.png" },
