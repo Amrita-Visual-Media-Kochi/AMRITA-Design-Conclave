@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Amrita Design Conclave",
   description: "A two day immersive conclave bringing students, designers, and industry professionals together.",
   icons: {
-    icon: "/shapes/favicon.svg",
+    icon: "/assets/icons/favicon.svg",
   },
 };
 

@@ -156,7 +156,7 @@ export default function SchedulePage() {
             {/* Navbar */}
             <nav className={styles.navbar}>
                 <a href="/" className={styles.logo}>
-                    <Image src="/assets/logoframe.svg" alt="ADC Logo" width={80} height={40} className={styles.logoImage} />
+                    <Image src="/assets/icons/adc-logo.svg" alt="ADC Logo" width={80} height={40} className={styles.logoImage} />
                 </a>
                 <div className={styles.navLinks}>
                     <a href="/schedule">Event Schedule</a>
@@ -208,7 +208,7 @@ export default function SchedulePage() {
                                 <>
                                     <div className={styles.dateHeader}>
                                         <Image
-                                            src="/shapes/CalendarDots.svg"
+                                            src="/assets/shapes/CalendarDots.svg"
                                             alt="Calendar"
                                             width={24}
                                             height={24}
@@ -264,7 +264,7 @@ export default function SchedulePage() {
                                 <>
                                     <div className={styles.dateHeader}>
                                         <Image
-                                            src="/shapes/CalendarDots.svg"
+                                            src="/assets/shapes/CalendarDots.svg"
                                             alt="Calendar"
                                             width={24}
                                             height={24}
@@ -295,7 +295,7 @@ export default function SchedulePage() {
                 <div className={styles.exhibitionWrapper}>
                     <div className={styles.exhibitionDate}>
                         <Image
-                            src="/shapes/CalendarDots.svg"
+                            src="/assets/shapes/CalendarDots.svg"
                             alt="Calendar"
                             width={24}
                             height={24}
@@ -310,49 +310,49 @@ export default function SchedulePage() {
                         </div>
                         <div className={styles.exhibitionFrameWrap}>
                             <Image
-                                src="/assets/frame118.svg"
+                                src="/assets/images/frame-decoration.svg"
                                 alt=""
                                 width={280}
                                 height={140}
                                 className={styles.exhibitionFrame}
                             />
                             <Image
-                                src="/assets/frame118.svg"
+                                src="/assets/images/frame-decoration.svg"
                                 alt=""
                                 width={280}
                                 height={140}
                                 className={styles.exhibitionFrame}
                             />
                             <Image
-                                src="/assets/frame118.svg"
+                                src="/assets/images/frame-decoration.svg"
                                 alt=""
                                 width={280}
                                 height={140}
                                 className={styles.exhibitionFrame}
                             />
                             <Image
-                                src="/assets/frame118.svg"
+                                src="/assets/images/frame-decoration.svg"
                                 alt=""
                                 width={280}
                                 height={140}
                                 className={styles.exhibitionFrame}
                             />
                             <Image
-                                src="/assets/frame118.svg"
+                                src="/assets/images/frame-decoration.svg"
                                 alt=""
                                 width={280}
                                 height={140}
                                 className={styles.exhibitionFrame}
                             />
                             <Image
-                                src="/assets/frame118.svg"
+                                src="/assets/images/frame-decoration.svg"
                                 alt=""
                                 width={280}
                                 height={140}
                                 className={styles.exhibitionFrame}
                             />
                             <Image
-                                src="/assets/frame118.svg"
+                                src="/assets/images/frame-decoration.svg"
                                 alt=""
                                 width={280}
                                 height={140}

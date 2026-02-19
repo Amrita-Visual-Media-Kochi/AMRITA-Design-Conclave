@@ -57,7 +57,7 @@
     min-height: 100vh;
     position: relative;
     /* Background Image */
-    background-image: url('/event_sche.jpg');
+    background-image: url('/assets/backgrounds/schedule-bg.jpg');
     background-size: cover;
     background-position: center;
     display: flex;

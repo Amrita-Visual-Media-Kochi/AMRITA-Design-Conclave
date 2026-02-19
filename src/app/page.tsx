@@ -12,7 +12,7 @@ export default function Home() {
     <div className={styles.container}>
       <nav className={styles.navbar}>
         <a href="/" className={styles.logo}>
-          <Image src="/assets/logoframe.svg" alt="ADC Logo" width={80} height={40} className={styles.logoImage} />
+          <Image src="/assets/icons/adc-logo.svg" alt="ADC Logo" width={80} height={40} className={styles.logoImage} />
         </a>
         <div className={styles.navLinks}>
           <a href="/schedule">Event Schedule</a>

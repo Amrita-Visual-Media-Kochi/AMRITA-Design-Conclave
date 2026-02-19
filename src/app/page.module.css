@@ -57,7 +57,7 @@
   width: 100%;
   min-height: 100vh;
   position: relative;
-  background-image: url('/assets/herosection.png');
+  background-image: url('/assets/backgrounds/hero-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

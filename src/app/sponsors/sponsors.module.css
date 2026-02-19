@@ -58,7 +58,7 @@
     width: 100%;
     min-height: 100vh;
     position: relative;
-    background-image: url('/sponsersbg.jpg');
+    background-image: url('/assets/backgrounds/sponsors-bg.jpg');
     background-size: cover;
     background-position: center;
     display: flex;

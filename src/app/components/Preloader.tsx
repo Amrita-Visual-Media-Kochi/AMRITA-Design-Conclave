@@ -40,7 +40,7 @@ export default function Preloader() {
         <div className={`${styles.container} ${isVisible ? "" : styles.hidden}`}>
             <div className={styles.loaderContent}>
                 <Image
-                    src="/assets/logoframe.svg"
+                    src="/assets/icons/adc-logo.svg"
                     alt="Amrita Design Conclave"
                     width={180}
                     height={80}

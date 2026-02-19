@@ -27,7 +27,7 @@ export default function VenueSection() {
                 <div className={styles.right}>
                     <div className={styles.imageFrame}>
                         <Image
-                            src="/assets/amrita.jpg"
+                            src="/assets/images/amrita-campus.jpg"
                             alt="Amrita School of Arts and Sciences, Kochi"
                             fill
                             className={styles.venueImage}

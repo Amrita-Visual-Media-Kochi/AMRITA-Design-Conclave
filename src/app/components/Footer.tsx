@@ -8,13 +8,13 @@ export default function Footer() {
             <div className={styles.box}>
                 {/* CTA area */}
                 <div className={styles.ctaArea}>
-                    <Image src="/shapes/Vector Star.svg" alt="" width={63} height={63} className={styles.decorTopRight} />
+                    <Image src="/assets/shapes/Vector Star.svg" alt="" width={63} height={63} className={styles.decorTopRight} />
                     <h2 className={styles.ctaTitle}>
                         Be part of the conversation shaping tomorrow&rsquo;s designers.
                     </h2>
-                    <Image src="/shapes/Vector (1).svg" alt="" width={63} height={63} className={styles.decorLeftIcon} />
+                    <Image src="/assets/shapes/Vector (1).svg" alt="" width={63} height={63} className={styles.decorLeftIcon} />
                     <button className={styles.ctaButton}>Register now</button>
-                    <Image src="/shapes/Vector.svg" alt="" width={53} height={53} className={styles.decorRightIcon} />
+                    <Image src="/assets/shapes/Vector.svg" alt="" width={53} height={53} className={styles.decorRightIcon} />
                 </div>
 
                 {/* Dashed separator */}
@@ -24,7 +24,7 @@ export default function Footer() {
                 <div className={styles.linksArea}>
                     <div className={styles.leftCol}>
                         <div className={styles.logoRow}>
-                            <Image src="/assets/logoframe.svg" alt="ADC Logo" width={60} height={30} />
+                            <Image src="/assets/icons/adc-logo.svg" alt="ADC Logo" width={60} height={30} />
                             <span className={styles.logoText}>Amrita Design Conclave</span>
                         </div>
                         <p className={styles.description}>
@@ -80,7 +80,7 @@ export default function Footer() {
             {/* Gradient watermark - outside the box */}
             <div className={styles.watermark}>
                 <Image
-                    src="/assets/bottomlogo.svg"
+                    src="/assets/icons/adc-watermark.svg"
                     alt="ADC"
                     width={800}
                     height={220}
