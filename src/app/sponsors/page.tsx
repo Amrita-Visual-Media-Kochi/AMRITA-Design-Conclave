@@ -1,21 +1,11 @@
 import Image from "next/image";
 import styles from "./sponsors.module.css";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
 export default function SponsorsPage() {
     return (
         <div className={styles.container}>
-            {/* Navbar */}
-            <nav className={styles.navbar}>
-                <a href="/" className={styles.logo}>
-                    <Image src="/assets/icons/adc-logo.svg" alt="ADC Logo" width={80} height={40} className={styles.logoImage} />
-                </a>
-                <div className={styles.navLinks}>
-                    <a href="/schedule">Event Schedule</a>
-                    <a href="/sponsors">Sponsors</a>
-                    <a href="/contact">Contact us</a>
-                </div>
-            </nav>
+            <Navbar />
 
             {/* Hero Section */}
             <section className={styles.hero}>
@@ -32,7 +22,28 @@ export default function SponsorsPage() {
                 </div>
             </section>
 
-            {/* Partner Announcements Section */}
+            {/* Association Section */}
+            <section className={styles.associationSection}>
+                <h2 className={styles.associationTitle}>In association with</h2>
+                <div className={styles.associationLogos}>
+                    <Image
+                        src="/logo/nasscom.svg"
+                        alt="Nasscom AI Logo"
+                        width={375}
+                        height={120}
+                        className={styles.associationLogo}
+                    />
+                    <Image
+                        src="/logo/ksum.png"
+                        alt="Kerala Startup Mission Logo"
+                        width={300}
+                        height={150}
+                        className={styles.associationLogo}
+                    />
+                </div>
+            </section>
+
+            {/* Partner Announcements Section }
             <section className={styles.announcementSection}>
                 <Image
                     src="/assets/images/frame-decoration.svg"
@@ -59,6 +70,7 @@ export default function SponsorsPage() {
                     className={styles.decorRight}
                 />
             </section>
+            {*/}
 
             {/* Footer */}
             <Footer />

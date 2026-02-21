@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import styles from "./contact.module.css";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FormEvent, useState } from "react";
 
@@ -48,16 +49,7 @@ export default function ContactPage() {
     return (
         <div className={styles.container}>
             {/* Navbar */}
-            <nav className={styles.navbar}>
-                <a href="/" className={styles.logo}>
-                    <Image src="/assets/icons/adc-logo.svg" alt="ADC Logo" width={80} height={40} className={styles.logoImage} />
-                </a>
-                <div className={styles.navLinks}>
-                    <a href="/schedule">Event Schedule</a>
-                    <a href="/sponsors">Sponsors</a>
-                    <a href="/contact">Contact us</a>
-                </div>
-            </nav>
+            <Navbar />
 
             {/* Hero Section */}
             <section className={styles.hero}>

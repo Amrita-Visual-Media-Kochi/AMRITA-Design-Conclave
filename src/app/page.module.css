@@ -130,27 +130,81 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Sponsors */
+/* Sponsors Ticker */
 .sponsors {
-  display: flex;
-  justify-content: center;
-  padding: 3rem var(--site-padding) 2rem;
+  width: 100%;
   background-color: #ffffff;
+  padding: 4rem 0 3rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
-.sponsorsGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
+.tickerWrapper {
   width: 100%;
-  max-width: 1200px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  white-space: nowrap;
 }
 
-.sponsorPlaceholder {
-  background-color: #d9d9d9;
-  height: 80px;
-  border-radius: 4px;
-  width: 100%;
+/* Fading edges for smooth entry/exit */
+.tickerWrapper::before,
+.tickerWrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tickerWrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff 0%, transparent 100%);
+}
+
+.tickerWrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff 0%, transparent 100%);
+}
+
+.tickerTrack {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  padding-right: 6rem;
+  animation: scrollTicker 20s linear infinite;
+  width: max-content;
+}
+
+.tickerGroup {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+.sponsorLogo {
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.sponsorLogo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes scrollTicker {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Feature Section */
@@ -165,7 +219,6 @@
   background-color: #ffffff;
   border-radius: 32px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 15px 0px #978cd0;
-  max-width: 1200px;
   width: 100%;
   padding: 6rem 4rem;
   /* Increased padding */
@@ -179,32 +232,30 @@
 /* ... */
 
 .featureContent {
-  max-width: 800px;
-  /* Increased max-width for better break */
+  width: 100%;
+  max-width: 850px;
   margin: 0 auto;
   text-align: left;
   z-index: 10;
   position: relative;
   padding: 2rem;
-  /* Added text padding */
 }
 
 .featureTitle {
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
-  /* Slightly larger title */
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
   font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 2rem;
-  /* Increased margin */
+  line-height: 1.15;
+  margin-bottom: 2.5rem;
   letter-spacing: -0.02em;
   color: #000000;
+  max-width: 750px;
 }
 
 .featureText {
-  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
-  line-height: 1.8;
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  line-height: 1.7;
   color: #555;
-  max-width: 600px;
+  max-width: 650px;
 }
 
 .featureDecorationLeft {
@@ -229,10 +280,6 @@
 @media (max-width: 1024px) {
   .navLinks {
     gap: 1.5rem;
-  }
-
-  .sponsorsGrid {
-    grid-template-columns: repeat(3, 1fr);
   }
 
   .featureCard {
@@ -342,16 +389,7 @@
   }
 
   .sponsors {
-    padding: 2rem var(--site-padding) 1.5rem;
-  }
-
-  .sponsorsGrid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .sponsorPlaceholder {
-    height: 50px;
+    padding: 2.5rem 0 2rem;
   }
 
   .featureSection {
@@ -369,14 +407,6 @@
 }
 
 @media (max-width: 480px) {
-  .sponsorsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-
-  .sponsorPlaceholder {
-    height: 40px;
-  }
 
   .featureCard {
     padding: 2.5rem 1.25rem;

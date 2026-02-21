@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./schedule.module.css";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 type Speaker = {
@@ -42,7 +43,7 @@ const day1Events: Event[] = [
         type: "panel",
         colorClass: "lavender",
         speakers: [
-            { name: "Kavya Baburaj" },
+            { name: "Kavya Baburaj", image: "/people/Kavya Baburaj.png" },
             { name: "Anil Reddy", image: "/people/Anil Reddy.png" },
             { name: "Devika Panicker Prasad", image: "/people/Devika Panicker Prasad.png" },
             { name: "Hiran Venugopalan", image: "/people/Hiran Venugopalan.png" },
@@ -153,17 +154,7 @@ export default function SchedulePage() {
 
     return (
         <div className={styles.container}>
-            {/* Navbar */}
-            <nav className={styles.navbar}>
-                <a href="/" className={styles.logo}>
-                    <Image src="/assets/icons/adc-logo.svg" alt="ADC Logo" width={80} height={40} className={styles.logoImage} />
-                </a>
-                <div className={styles.navLinks}>
-                    <a href="/schedule">Event Schedule</a>
-                    <a href="/sponsors">Sponsors</a>
-                    <a href="/contact">Contact us</a>
-                </div>
-            </nav>
+            <Navbar />
 
             {/* Hero */}
             <section className={styles.hero}>

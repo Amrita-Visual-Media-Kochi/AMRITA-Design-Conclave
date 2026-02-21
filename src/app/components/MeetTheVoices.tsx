@@ -12,7 +12,7 @@ const speakers = [
         name: "Kavya Baburaj",
         role: "Founder",
         company: "Social PR",
-        image: "/people/Kavya Baburaj.jpg.jpeg" // Preserved original filename
+        image: "/people/Kavya Baburaj.png"
     },
     {
         name: "Anil Reddy",
@@ -89,13 +89,17 @@ export default function MeetTheVoices() {
                     {speakers.map((speaker, index) => (
                         <div key={index} className={styles.card}>
                             <div className={styles.imageWrapper}>
-                                <Image
-                                    src={speaker.image}
-                                    alt={speaker.name}
-                                    fill
-                                    className={styles.speakerImage}
-                                    sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                                />
+                                {speaker.image ? (
+                                    <Image
+                                        src={speaker.image}
+                                        alt={speaker.name}
+                                        fill
+                                        className={styles.speakerImage}
+                                        sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                                    />
+                                ) : (
+                                    <div className={styles.placeholderImage}></div>
+                                )}
                             </div>
                             <div className={styles.info}>
                                 <h3 className={styles.name}>{speaker.name}</h3>

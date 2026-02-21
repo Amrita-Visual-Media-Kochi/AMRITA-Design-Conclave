@@ -1,8 +1,6 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
+import Navbar from "./components/Navbar";
 import WhatYouGain from "./components/WhatYouGain";
 import MeetTheVoices from "./components/MeetTheVoices";
 import WhatAreTheEvents from "./components/WhatAreTheEvents";
@@ -11,39 +9,9 @@ import GlimpsesSection from "./components/GlimpsesSection";
 import Footer from "./components/Footer";
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
     <div className={styles.container}>
-      <nav className={styles.navbar}>
-        <a href="/" className={styles.logo}>
-          <Image src="/assets/icons/adc-logo.svg" alt="ADC Logo" width={80} height={40} className={styles.logoImage} />
-        </a>
-        <div className={styles.navLinks}>
-          <a href="/schedule">Event Schedule</a>
-          <a href="/sponsors">Sponsors</a>
-          <a href="/contact">Contact us</a>
-        </div>
-        <button className={styles.hamburger} onClick={toggleMenu} aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </nav>
-
-      {/* Mobile Menu Overlay */}
-      <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ""}`}>
-        <button className={styles.closeButton} onClick={toggleMenu} aria-label="Close menu">
-          &times;
-        </button>
-        <a href="/schedule" onClick={toggleMenu}>Event Schedule</a>
-        <a href="/sponsors" onClick={toggleMenu}>Sponsors</a>
-        <a href="/contact" onClick={toggleMenu}>Contact us</a>
-      </div>
+      <Navbar />
 
       <main className={styles.hero}>
         <div className={styles.heroContent}>
@@ -57,11 +25,17 @@ export default function Home() {
         </div>
       </main>
 
+      {/* Sponsors Ticker */}
       <section className={styles.sponsors}>
-        <div className={styles.sponsorsGrid}>
-          {[1, 2, 3, 4, 5].map((_, index) => (
-            <div key={index} className={styles.sponsorPlaceholder}></div>
-          ))}
+        <div className={styles.tickerWrapper}>
+          <div className={styles.tickerTrack}>
+            {[...Array(6)].map((_, index) => (
+              <div key={index} className={styles.tickerGroup}>
+                <Image src="/logo/nasscom.svg" alt="Nasscom" width={200} height={60} className={styles.sponsorLogo} />
+                <Image src="/logo/ksum.png" alt="KSUM" width={160} height={80} className={styles.sponsorLogo} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
