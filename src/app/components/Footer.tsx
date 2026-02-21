@@ -40,12 +40,7 @@ export default function Footer() {
                                     <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
                                 </svg>
                             </a>
-                            <a href="#" aria-label="LinkedIn" className={styles.socialIcon}>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" />
-                                    <path d="M8 11v5M8 8v.01M12 16v-5c0-1 1-2 2-2s2 1 2 2v5" />
-                                </svg>
-                            </a>
+
                             <a href="#" aria-label="Email" className={styles.socialIcon}>
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <rect x="2" y="4" width="20" height="16" rx="3" />

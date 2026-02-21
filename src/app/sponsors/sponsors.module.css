@@ -169,44 +169,48 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 180px;
-    height: auto;
+    height: 100%;
+    width: auto;
     z-index: 1;
+    object-fit: cover;
 }
 
 .decorRight {
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: 0;
-    width: 180px;
-    height: auto;
+    height: 100%;
+    width: auto;
     z-index: 1;
     transform: rotate(180deg);
+    object-fit: cover;
 }
 
 .announcementContent {
-    max-width: 600px;
-    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
     z-index: 2;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .announcementTitle {
-    font-size: clamp(2rem, 5vw, 3.25rem);
-    font-weight: 700;
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 600;
     color: #000000;
-    line-height: 1.25;
+    line-height: 1.15;
     letter-spacing: -0.02em;
 }
 
 .announcementText {
-    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
     line-height: 1.7;
     color: #666;
-    max-width: 500px;
+    max-width: 600px;
 }
 
 /* ========== RESPONSIVE ========== */
@@ -218,7 +222,7 @@
 
     .decorLeft,
     .decorRight {
-        width: 140px;
+        opacity: 0.8;
     }
 }
 
@@ -248,8 +252,7 @@
 
     .decorLeft,
     .decorRight {
-        width: 100px;
-        opacity: 0.5;
+        opacity: 0.15;
     }
 }
 

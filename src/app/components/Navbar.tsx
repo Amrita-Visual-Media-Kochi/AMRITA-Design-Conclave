@@ -15,26 +15,44 @@ export default function Navbar() {
     };
 
     useEffect(() => {
+        let timeoutId: NodeJS.Timeout;
+
         const controlNavbar = () => {
             if (typeof window !== "undefined") {
-                if (window.scrollY > lastScrollY && window.scrollY > 80) {
-                    // if scroll down hide the navbar
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY <= 80) {
+                    setShow(true);
+                } else if (currentScrollY > lastScrollY) {
+                    // Scrolling down
                     setShow(false);
                 } else {
-                    // if scroll up show the navbar
+                    // Scrolling up
                     setShow(true);
                 }
-                setLastScrollY(window.scrollY);
+
+                setLastScrollY(currentScrollY);
+
+                // Clear any existing timeout
+                if (timeoutId) clearTimeout(timeoutId);
+
+                // Set a new timeout to hide the navbar after 3 seconds of inactivity
+                // Only if not at the top of the page and mobile menu is closed
+                if (currentScrollY > 80 && !isMenuOpen) {
+                    timeoutId = setTimeout(() => {
+                        setShow(false);
+                    }, 3000);
+                }
             }
         };
 
         window.addEventListener("scroll", controlNavbar);
 
-        // cleanup function
         return () => {
             window.removeEventListener("scroll", controlNavbar);
+            if (timeoutId) clearTimeout(timeoutId);
         };
-    }, [lastScrollY]);
+    }, [lastScrollY, isMenuOpen]);
 
     return (
         <>

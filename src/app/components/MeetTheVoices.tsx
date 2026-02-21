@@ -22,7 +22,7 @@ const speakers = [
     },
     {
         name: "Ben Thomas",
-        role: "Creative head",
+        role: "Sr. Art Director and Delivery Manager",
         company: "EY",
         image: "/people/Ben Thomas.jpeg"
     },

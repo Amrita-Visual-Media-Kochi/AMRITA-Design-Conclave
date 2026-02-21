@@ -75,7 +75,7 @@
 /* Added class for the speaker image */
 .speakerImage {
     object-fit: cover;
-    object-position: center;
+    object-position: top;
     transition: transform 0.4s ease, filter 0.4s ease;
     filter: grayscale(100%);
 }

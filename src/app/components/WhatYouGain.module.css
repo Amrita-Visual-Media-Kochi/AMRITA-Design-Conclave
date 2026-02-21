@@ -157,4 +157,12 @@
     .cardBody {
         padding: 2rem;
     }
+
+    .textContent h3 {
+        font-size: 1.5rem;
+    }
+
+    .textContent p {
+        font-size: 0.95rem;
+    }
 }

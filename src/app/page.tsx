@@ -25,20 +25,6 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Sponsors Ticker */}
-      <section className={styles.sponsors}>
-        <div className={styles.tickerWrapper}>
-          <div className={styles.tickerTrack}>
-            {[...Array(6)].map((_, index) => (
-              <div key={index} className={styles.tickerGroup}>
-                <Image src="/logo/nasscom.svg" alt="Nasscom" width={200} height={60} className={styles.sponsorLogo} />
-                <Image src="/logo/ksum.png" alt="KSUM" width={160} height={80} className={styles.sponsorLogo} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className={styles.featureSection}>
         <div className={styles.featureCard}>
           <Image

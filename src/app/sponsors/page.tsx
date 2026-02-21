@@ -43,18 +43,20 @@ export default function SponsorsPage() {
                 </div>
             </section>
 
-            {/* Partner Announcements Section }
+            {/* Partner Announcements Section */}
             <section className={styles.announcementSection}>
                 <Image
                     src="/assets/images/frame-decoration.svg"
                     alt=""
-                    width={200}
-                    height={400}
+                    width={300}
+                    height={600}
                     className={styles.decorLeft}
                 />
                 <div className={styles.announcementContent}>
                     <h2 className={styles.announcementTitle}>
-                        Partner Announcements Coming Soon.....
+                        Partner Announcements
+                        <br />
+                        Coming Soon.....
                     </h2>
                     <p className={styles.announcementText}>
                         We are curating partnerships with organizations that share our commitment to
@@ -65,12 +67,11 @@ export default function SponsorsPage() {
                 <Image
                     src="/assets/images/frame-decoration.svg"
                     alt=""
-                    width={200}
-                    height={400}
+                    width={300}
+                    height={600}
                     className={styles.decorRight}
                 />
             </section>
-            {*/}
 
             {/* Footer */}
             <Footer />
