@@ -3,7 +3,7 @@
     flex-direction: column;
     min-height: 100vh;
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 /* Navbar */
@@ -85,7 +85,7 @@
 
 .heroTitle {
     font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.15;
     letter-spacing: -0.02em;
 }
@@ -134,7 +134,7 @@
 
 .scheduleTitle {
     font-size: clamp(2rem, 4vw, 2.75rem);
-    font-weight: 700;
+    font-weight: 600;
     color: #000;
     line-height: 1.25;
     letter-spacing: -0.02em;
@@ -341,7 +341,7 @@
 /* Speaker Grid */
 .speakerGrid {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
@@ -355,7 +355,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     position: relative;
-    width: 180px;
+    width: 145px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -422,9 +422,10 @@
 .exhibitionSection {
     width: 100%;
     background-color: #ffffff;
-    padding: 0 var(--site-padding) 4rem;
+    padding: 3rem var(--site-padding) 4rem;
     display: flex;
     justify-content: center;
+    border-top: 1px solid #eaeaea;
 }
 
 .exhibitionWrapper {
@@ -442,6 +443,7 @@
     font-size: 0.95rem;
     font-weight: 600;
     color: #333;
+    margin-bottom: 0.5rem;
 }
 
 .exhibitionCard {
@@ -458,6 +460,7 @@
     padding: 2rem 2.5rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 0.35rem;
 }
 
@@ -480,15 +483,20 @@
     align-items: center;
     overflow: hidden;
     min-height: 200px;
-    /* Increased height */
     height: 100%;
-    background-image: url('/assets/images/frame-166.svg');
-    background-size: auto 100%;
-    /* Height matching (bigger) */
-    background-repeat: round no-repeat;
-    /* 'round' stretches to fit width perfectly */
-    background-position: left center;
-    /* Aligns start */
+    position: relative;
+    /* Container for absolute images */
+}
+
+.rotatingImage {
+    object-fit: contain;
+    object-position: left center;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.activeImage {
+    opacity: 1;
 }
 
 /* .exhibitionFrame removed as it's handled by background-image */
@@ -515,10 +523,7 @@
     }
 
     .scheduleTitle {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        background: #ffffff;
+        position: relative;
         padding-top: 1rem;
         padding-bottom: 0.5rem;
         margin-top: 0;
@@ -527,11 +532,13 @@
     .dayTabs {
         flex-direction: row;
         position: sticky;
-        top: 4.5rem;
+        top: -1px;
+        /* Sticks right to the top */
         z-index: 20;
         background: #ffffff;
         gap: 0.5rem;
-        padding: 0.5rem 0 1rem;
+        padding: 1rem 0;
+        /* Add top padding to create a nice visual header bar */
         width: 100%;
     }
 
@@ -589,9 +596,6 @@
     .exhibitionFrameWrap {
         min-height: 120px;
         flex: 0 0 35%;
-        background-position: right center;
-        background-size: auto 100%;
-        background-repeat: repeat-x;
     }
 }
 
@@ -601,6 +605,10 @@
     }
 
     .scheduleSection {
+        padding: 2rem var(--site-padding);
+    }
+
+    .exhibitionSection {
         padding: 2rem var(--site-padding);
     }
 
@@ -669,8 +677,5 @@
     .exhibitionFrameWrap {
         min-height: 100px;
         flex: 0 0 40%;
-        background-position: right center;
-        background-size: auto 100%;
-        background-repeat: repeat-x;
     }
 }

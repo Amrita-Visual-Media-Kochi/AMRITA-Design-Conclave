@@ -80,9 +80,7 @@ export default function MeetTheVoices() {
                     <div className={styles.headerLine}></div>
                 </div>
                 <p className={styles.subtitle}>
-                    Hear directly from experts who are actively working in the industry
-                    <br />
-                    across corporations, studios, startups, and independent practices.
+                    Hear directly from experts who are actively working in the industry across corporations, studios, startups, and independent practices.
                 </p>
 
                 <div className={styles.grid}>
