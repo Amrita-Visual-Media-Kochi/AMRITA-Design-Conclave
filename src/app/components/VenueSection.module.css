@@ -104,7 +104,7 @@
 
 @media (max-width: 768px) {
     .section {
-        padding: 3rem var(--site-padding);
+        padding: 7rem var(--site-padding) 12rem;
     }
 
     .wrapper {
