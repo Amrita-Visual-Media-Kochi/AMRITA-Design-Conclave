@@ -21,6 +21,12 @@ const speakers = [
         image: "/people/Anil Reddy.png"
     },
     {
+        name: "Saikat Saha",
+        role: "Technology Director",
+        company: "NASCOMM",
+        image: "/people/Saikat Saha.jpg"
+    },
+    {
         name: "Ben Thomas",
         role: "Sr. Art Director and Delivery Manager",
         company: "EY",

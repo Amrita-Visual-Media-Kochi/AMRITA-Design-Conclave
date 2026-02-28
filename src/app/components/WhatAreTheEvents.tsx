@@ -25,13 +25,7 @@ const allEvents = [
             "Hands-on sessions by Kerala startup mission grounded in real workflows. Learn how design problems are actually approached and solved. Focused on process, not polish.",
         image: "/other/workshop.png",
     },
-    {
-        icon: "research",
-        title: "Research paper presentation",
-        description:
-            "A platform for students and scholars to present research in design and related disciplines. Focused on inquiry, methodology, and evidence-based thinking.",
-        image: "/other/research paper presentation.png",
-    },
+
     {
         icon: "exhibition",
         title: "Exhibition",
@@ -69,13 +63,7 @@ function EventIcon({ type }: { type: string }) {
                     <path d="M9 23h10M14 19v4" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
             );
-        case "research":
-            return (
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                    <rect x="5" y="2" width="18" height="24" rx="3" stroke="white" strokeWidth="1.5" />
-                    <path d="M10 8h8M10 12h8M10 16h5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-            );
+
         case "exhibition":
             return (
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none">

@@ -99,9 +99,9 @@ const day1Events: Event[] = [
 const day2Events: Event[] = [
     {
         time: "9:00 AM - 11:00 AM",
-        title: "3D Printing Workshop by Kerala Startup Mission",
+        title: "Laser Engraving Workshop by Kerala Startup Mission",
         type: "session",
-        colorClass: "lavender",
+        colorClass: "blue",
     },
     {
         time: "11:00 AM - 11:15 AM",
@@ -111,9 +111,9 @@ const day2Events: Event[] = [
     },
     {
         time: "11:15 AM - 12:00 PM",
-        title: "3D Printing Workshop by Kerala Startup Mission",
+        title: "Laser Engraving Workshop by Kerala Startup Mission",
         type: "session",
-        colorClass: "lavender",
+        colorClass: "blue",
     },
     {
         time: "12:15 PM - 1:15 PM",
@@ -122,10 +122,17 @@ const day2Events: Event[] = [
         colorClass: "gray",
     },
     {
-        time: "1:30 PM - 4:30 PM",
-        title: "Academic Research Paper Presentation",
+        time: "1:30 PM - 3:30 PM",
+        title: "AI and Brand design Workshop by Vijay Raj N",
         type: "session",
         colorClass: "lavender",
+        speakers: [{ name: "Vijay Raj N", image: "/people/Vijay Raj N.jpeg" }],
+    },
+    {
+        time: "3:30 PM - 4:30 PM",
+        title: "Valedictory Ceremony",
+        type: "session",
+        colorClass: "yellow",
     },
 ];
 
@@ -270,7 +277,37 @@ export default function SchedulePage() {
                                         >
                                             <div className={styles.timeLabel}>{event.time}</div>
                                             <div className={styles.eventContent}>
-                                                <h3 className={styles.eventTitle}>{event.title}</h3>
+                                                <h3 className={styles.eventTitle}>
+                                                    {event.title}
+                                                    {event.subtitle && <span className={styles.eventSubtitle}>{event.subtitle}</span>}
+                                                </h3>
+                                                {event.speakers && event.speakers.length > 0 && (
+                                                    <div className={styles.speakerGrid}>
+                                                        {event.speakers.map((speaker, sIndex) => (
+                                                            <div key={sIndex} className={styles.speakerCard}>
+                                                                <div className={styles.speakerImageWrap}>
+                                                                    {speaker.image ? (
+                                                                        <Image
+                                                                            src={speaker.image}
+                                                                            alt={speaker.name}
+                                                                            width={360}
+                                                                            height={360}
+                                                                            sizes="(max-width: 768px) 150px, 180px"
+                                                                            className={styles.speakerImage}
+                                                                        />
+                                                                    ) : (
+                                                                        <div className={styles.speakerPlaceholder}></div>
+                                                                    )}
+                                                                </div>
+                                                                <div className={styles.speakerInfo}>
+                                                                    <span className={styles.speakerName}>{speaker.name}</span>
+                                                                    {speaker.tag && <span className={styles.speakerTag}>{speaker.tag}</span>}
+                                                                </div>
+
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
                                     ))}

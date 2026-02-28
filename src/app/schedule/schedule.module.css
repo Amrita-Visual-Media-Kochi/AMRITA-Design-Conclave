@@ -57,7 +57,7 @@
     min-height: 100vh;
     position: relative;
     /* Background Image */
-    background-image: url('/assets/backgrounds/schedule-bg.jpg');
+    background-image: url('/assets/backgrounds/scheudle-bg-1.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -140,11 +140,11 @@
     letter-spacing: -0.02em;
     position: sticky;
     top: 0;
-    z-index: 20;
+    z-index: 30;
     background: #ffffff;
-    padding-bottom: 2rem;
-    padding-top: 1rem;
-    margin-top: -1rem;
+    padding-bottom: 1rem;
+    padding-top: 80px;
+    margin-top: -80px;
     /* Offset padding to keep layout tight */
 }
 
@@ -165,8 +165,8 @@
     flex-direction: column;
     gap: 0.5rem;
     position: sticky;
-    top: 10rem;
-    /* Adjusted to sit below the sticky title */
+    top: 13.5rem;
+    /* Adjusted to sit perfectly below the sticky title */
     align-self: flex-start;
     flex-shrink: 0;
     z-index: 10;
@@ -300,6 +300,10 @@
 .blue .timeLabel,
 .lavender .timeLabel {
     color: #444;
+}
+
+.lavender .eventTitle {
+    color: #6d28d9;
 }
 
 .eventSubtitle {
@@ -486,6 +490,10 @@
     height: 100%;
     position: relative;
     /* Container for absolute images */
+    background-image: url('/assets/images/frame-166.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .rotatingImage {
@@ -524,6 +532,8 @@
 
     .scheduleTitle {
         position: relative;
+        z-index: 30;
+        /* ensures title is above the shadows */
         padding-top: 1rem;
         padding-bottom: 0.5rem;
         margin-top: 0;
@@ -532,13 +542,12 @@
     .dayTabs {
         flex-direction: row;
         position: sticky;
-        top: -1px;
-        /* Sticks right to the top */
+        top: 0;
         z-index: 20;
         background: #ffffff;
         gap: 0.5rem;
         padding: 1rem 0;
-        /* Add top padding to create a nice visual header bar */
+        margin-top: 0;
         width: 100%;
     }
 

@@ -7,23 +7,14 @@ import WhatAreTheEvents from "./components/WhatAreTheEvents";
 import VenueSection from "./components/VenueSection";
 import GlimpsesSection from "./components/GlimpsesSection";
 import Footer from "./components/Footer";
+import HeroSlideshow from "./components/HeroSlideshow";
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Navbar />
 
-      <main className={styles.hero}>
-        <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>
-            Welcome to the <br /> Confluence of Creativity
-          </h1>
-          <p className={styles.heroSubtitle}>
-            A two day immersive conclave bringing students, designers, and industry professionals together to confront the real world of design beyond portfolios, beyond aesthetics, beyond theory.
-          </p>
-          <button className={styles.ctaButton}>Register Now</button>
-        </div>
-      </main>
+      <HeroSlideshow />
 
       <section className={styles.featureSection}>
         <div className={styles.featureCard}>
@@ -36,7 +27,9 @@ export default function Home() {
           />
           <div className={styles.featureContent}>
             <h2 className={styles.featureTitle}>
-              Bridging design education with real-world industry practice.
+              Bridging design education<br />
+              with real-world industry<br />
+              practice.
             </h2>
             <p className={styles.featureText}>
               This conclave is built to expose aspiring designers to how design actually functions inside corporations, studios, startups, and freelance ecosystems. From invisible responsibilities and stakeholder pressure to compromises, constraints, and career trade-offs this is the side of design education that rarely gets discussed.

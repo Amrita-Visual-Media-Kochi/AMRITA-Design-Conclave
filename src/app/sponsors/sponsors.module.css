@@ -58,7 +58,7 @@
     width: 100%;
     min-height: 100vh;
     position: relative;
-    background-image: url('/assets/backgrounds/sponsors-bg.jpg');
+    background-image: url('/assets/backgrounds/sponsors-bg.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -124,7 +124,7 @@
 .associationSection {
     width: 100%;
     background-color: #ffffff;
-    padding: 6rem var(--site-padding);
+    padding: 243px var(--site-padding);
     display: flex;
     flex-direction: column;
     align-items: center;

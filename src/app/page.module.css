@@ -70,8 +70,8 @@
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  align-items: center;
-  padding: 0 var(--site-padding);
+  align-items: flex-end;
+  padding: 6rem var(--site-padding);
 }
 
 .hero::before {
@@ -89,7 +89,7 @@
 .heroContent {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 1000px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -128,6 +128,30 @@
 .ctaButton:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.slideshowIndicators {
+  position: absolute;
+  bottom: 2rem;
+  left: var(--site-padding);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.indicator {
+  width: 48px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+  padding: 0;
+}
+
+.indicatorActive {
+  background-color: #ffffff;
 }
 
 /* Sponsors Ticker */
@@ -233,7 +257,7 @@
 
 .featureContent {
   width: 100%;
-  max-width: 850px;
+  max-width: 950px;
   margin: 0 auto;
   text-align: left;
   z-index: 10;
@@ -248,14 +272,14 @@
   margin-bottom: 2.5rem;
   letter-spacing: -0.02em;
   color: #000000;
-  max-width: 750px;
+  max-width: 800px;
 }
 
 .featureText {
   font-size: clamp(0.9rem, 1.5vw, 1.05rem);
   line-height: 1.7;
   color: #555;
-  max-width: 650px;
+  max-width: 620px;
 }
 
 .featureDecorationLeft {
