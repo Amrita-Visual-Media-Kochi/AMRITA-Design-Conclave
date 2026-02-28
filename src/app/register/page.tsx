@@ -29,10 +29,10 @@ export default function Register() {
 
             <section className={styles.contentWrapper}>
                 <div className={styles.content} style={{ textAlign: 'center' }}>
-                    <h2>Admissions Opening Soon.</h2>
-                    <p>We are currently finalizing our speaker lineup and workshop schedules. Registration links along with early-bird ticketing will be made available on this page shortly.</p>
+                    <h2>Admissions are now open.</h2>
+                    <p>Register securely through our official Google Form to secure your spot at the conclave.</p>
                     <br />
-                    <a href="/" className={styles.returnButton}>Return to Homepage</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU1KuJ8hLbN7cFAVpxaGDLNDk54g6ByO5IzviRra32aJRRFA/viewform?usp=sharing&ouid=109509049660037313569" target="_blank" rel="noopener noreferrer" className={styles.returnButton}>Complete Google Form</a>
                 </div>
             </section>
 

@@ -14,7 +14,7 @@ export default function Footer() {
                         Be part of the conversation shaping<br />tomorrow&rsquo;s designers.
                     </h2>
                     <Image src="/assets/shapes/Vector (1).svg" alt="" width={63} height={63} className={styles.decorLeftIcon} />
-                    <Link href="/register" className={styles.ctaButton}>Register now</Link>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU1KuJ8hLbN7cFAVpxaGDLNDk54g6ByO5IzviRra32aJRRFA/viewform?usp=sharing&ouid=109509049660037313569" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>Register now</a>
                     <Image src="/assets/shapes/Vector.svg" alt="" width={53} height={53} className={styles.decorRightIcon} />
                 </div>
 
@@ -34,7 +34,7 @@ export default function Footer() {
                             freelance ecosystems.
                         </p>
                         <div className={styles.socials}>
-                            <a href="#" aria-label="Instagram" className={styles.socialIcon}>
+                            <a href="https://www.instagram.com/amritadesignconclave26" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={styles.socialIcon}>
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <rect x="2" y="2" width="20" height="20" rx="5" />
                                     <circle cx="12" cy="12" r="5" />
@@ -42,7 +42,7 @@ export default function Footer() {
                                 </svg>
                             </a>
 
-                            <a href="#" aria-label="Email" className={styles.socialIcon}>
+                            <a href="mailto:amritadesignconclave2026@gmail.com" aria-label="Email" className={styles.socialIcon}>
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <rect x="2" y="4" width="20" height="16" rx="3" />
                                     <path d="M2 7l10 6 10-6" />
@@ -54,7 +54,7 @@ export default function Footer() {
                     <div className={styles.rightCol}>
                         <div className={styles.linkGroup}>
                             <Link href="/about">About</Link>
-                            <Link href="/register">Register</Link>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU1KuJ8hLbN7cFAVpxaGDLNDk54g6ByO5IzviRra32aJRRFA/viewform?usp=sharing&ouid=109509049660037313569" target="_blank" rel="noopener noreferrer">Register</a>
                             <Link href="/schedule">Schedule</Link>
                         </div>
                         <div className={styles.linkGroup}>

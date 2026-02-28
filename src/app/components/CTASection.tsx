@@ -11,7 +11,7 @@ export default function CTASection() {
                         Be part of the conversation shaping tomorrow&rsquo;s designers.
                     </h2>
                     <Image src="/shapes/Vector (1).svg" alt="" width={48} height={48} className={styles.decorLeftIcon} />
-                    <button className={styles.button}>Register Now</button>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU1KuJ8hLbN7cFAVpxaGDLNDk54g6ByO5IzviRra32aJRRFA/viewform?usp=sharing&ouid=109509049660037313569" target="_blank" rel="noopener noreferrer" className={styles.button}>Register Now</a>
                     <Image src="/shapes/Vector.svg" alt="" width={40} height={40} className={styles.decorRightIcon} />
                 </div>
             </div>

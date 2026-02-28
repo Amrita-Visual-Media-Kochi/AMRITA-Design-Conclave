@@ -17,13 +17,13 @@ const speakers = [
     {
         name: "Anil Reddy",
         role: "Founder and Designer",
-        company: "HappyPot",
+        company: "Happy Pet",
         image: "/people/Anil Reddy.png"
     },
     {
-        name: "Saikat Saha",
+        name: "Dr. Saikat Saha",
         role: "Technology Director",
-        company: "NASCOMM",
+        company: "NASCOMM AI",
         image: "/people/Saikat Saha.jpg"
     },
     {
