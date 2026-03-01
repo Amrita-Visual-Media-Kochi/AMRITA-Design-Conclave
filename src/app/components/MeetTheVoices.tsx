@@ -27,8 +27,8 @@ const speakers = [
         image: "/people/Saikat Saha.jpg"
     },
     {
-        name: "Ben Thomas",
-        role: "Sr. Art Director and Delivery Manager",
+        name: "Ben Thomas Palamoothil",
+        role: "Sr Art Director",
         company: "EY",
         image: "/people/Ben Thomas.jpeg"
     },

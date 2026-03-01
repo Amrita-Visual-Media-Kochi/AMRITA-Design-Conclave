@@ -66,7 +66,7 @@ const day1Events: Event[] = [
         colorClass: "lavender",
         speakers: [
             { name: "Govind Janardhanan", image: "/people/Govind Janardhanan.png" },
-            { name: "Ben Thomas", image: "/people/Ben Thomas.jpeg" },
+            { name: "Ben Thomas Palamoothil", image: "/people/Ben Thomas.jpeg" },
             { name: "Udaya Kumar", image: "/people/Udaya Kumar.png" },
             { name: "Vijay Raj N", image: "/people/Vijay Raj N.jpeg" },
         ],
@@ -82,7 +82,7 @@ const day1Events: Event[] = [
         ],
     },
     {
-        time: "3:30 PM - 4:30 PM",
+        time: "3:30 PM - 4:00 PM",
         title: "Insight Session 2: ",
         subtitle: "Operating System Level Artificial Intelligence for Healthcare in Smartphones",
         type: "session",
@@ -90,7 +90,7 @@ const day1Events: Event[] = [
         speakers: [{ name: "Govind Janardhanan", image: "/people/Govind Janardhanan.png" }],
     },
     {
-        time: "3:30 PM - 4:30 PM",
+        time: "4:00 PM - 5:00 PM",
         title: "Insight Session 3: ",
         subtitle: "AI for Communication Design",
         type: "session",
