@@ -14,7 +14,7 @@ export default function Footer() {
                         Be part of the conversation shaping<br />tomorrow&rsquo;s designers.
                     </h2>
                     <Image src="/assets/shapes/Vector (1).svg" alt="" width={63} height={63} className={styles.decorLeftIcon} />
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU1KuJ8hLbN7cFAVpxaGDLNDk54g6ByO5IzviRra32aJRRFA/viewform?usp=sharing&ouid=109509049660037313569" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>Register now</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU1KuJ8hLbN7cFAVpxaGDLNDk54g6ByO5IzviRra32aJRRFA/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>Register now</a>
                     <Image src="/assets/shapes/Vector.svg" alt="" width={53} height={53} className={styles.decorRightIcon} />
                 </div>
 
@@ -54,7 +54,7 @@ export default function Footer() {
                     <div className={styles.rightCol}>
                         <div className={styles.linkGroup}>
                             <Link href="/about">About</Link>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU1KuJ8hLbN7cFAVpxaGDLNDk54g6ByO5IzviRra32aJRRFA/viewform?usp=sharing&ouid=109509049660037313569" target="_blank" rel="noopener noreferrer">Register</a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU1KuJ8hLbN7cFAVpxaGDLNDk54g6ByO5IzviRra32aJRRFA/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Register</a>
                             <Link href="/schedule">Schedule</Link>
                         </div>
                         <div className={styles.linkGroup}>

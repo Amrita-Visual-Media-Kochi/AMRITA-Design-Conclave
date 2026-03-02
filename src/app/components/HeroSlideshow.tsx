@@ -66,7 +66,7 @@ export default function HeroSlideshow() {
                         </p>
                     </motion.div>
                 </AnimatePresence>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU1KuJ8hLbN7cFAVpxaGDLNDk54g6ByO5IzviRra32aJRRFA/viewform?usp=sharing&ouid=109509049660037313569" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>Register Now</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU1KuJ8hLbN7cFAVpxaGDLNDk54g6ByO5IzviRra32aJRRFA/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>Register Now</a>
             </div>
 
             <div className={styles.slideshowIndicators}>

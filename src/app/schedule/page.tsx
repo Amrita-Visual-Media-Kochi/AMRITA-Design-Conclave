@@ -175,7 +175,7 @@ export default function SchedulePage() {
                         A carefully curated programme of panels, insight sessions, and exhibitions
                         designed to bridge the gap between design education and industry practice.
                     </p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU1KuJ8hLbN7cFAVpxaGDLNDk54g6ByO5IzviRra32aJRRFA/viewform?usp=sharing&ouid=109509049660037313569" target="_blank" rel="noopener noreferrer" className={styles.registerButton}>Register Now</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU1KuJ8hLbN7cFAVpxaGDLNDk54g6ByO5IzviRra32aJRRFA/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className={styles.registerButton}>Register Now</a>
                 </div>
             </section>
 

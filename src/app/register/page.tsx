@@ -32,7 +32,7 @@ export default function Register() {
                     <h2>Admissions are now open.</h2>
                     <p>Register securely through our official Google Form to secure your spot at the conclave.</p>
                     <br />
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU1KuJ8hLbN7cFAVpxaGDLNDk54g6ByO5IzviRra32aJRRFA/viewform?usp=sharing&ouid=109509049660037313569" target="_blank" rel="noopener noreferrer" className={styles.returnButton}>Complete Google Form</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU1KuJ8hLbN7cFAVpxaGDLNDk54g6ByO5IzviRra32aJRRFA/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className={styles.returnButton}>Complete Google Form</a>
                 </div>
             </section>
 
