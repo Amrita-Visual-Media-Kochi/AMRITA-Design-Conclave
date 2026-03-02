@@ -65,9 +65,9 @@ const day1Events: Event[] = [
         type: "panel",
         colorClass: "lavender",
         speakers: [
-            { name: "Govind Janardhanan", image: "/people/Govind Janardhanan.png" },
-            { name: "Ben Thomas Palamoothil", image: "/people/Ben Thomas.jpeg" },
-            { name: "Udaya Kumar", image: "/people/Udaya Kumar.png" },
+            { name: "Govind Janardhan", image: "/people/Govind Janardhanan.png" },
+            { name: "Ben Thomas Palamoottil", image: "/people/Ben Thomas.jpeg" },
+            { name: "Uday Kumar", image: "/people/Udaya Kumar.png" },
             { name: "Vijay Raj N", image: "/people/Vijay Raj N.jpeg" },
         ],
     },
@@ -87,7 +87,7 @@ const day1Events: Event[] = [
         subtitle: "Operating System Level Artificial Intelligence for Healthcare in Smartphones",
         type: "session",
         colorClass: "yellow",
-        speakers: [{ name: "Govind Janardhanan", image: "/people/Govind Janardhanan.png" }],
+        speakers: [{ name: "Govind Janardhan", image: "/people/Govind Janardhanan.png" }],
     },
     {
         time: "4:00 PM - 5:00 PM",

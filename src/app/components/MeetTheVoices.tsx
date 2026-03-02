@@ -10,14 +10,14 @@ const speakers = [
     },
     {
         name: "Kavya Baburaj",
-        role: "Founder",
-        company: "Social PR",
+        role: "Founder & CEO",
+        company: "Social PR, Kochi",
         image: "/people/Kavya Baburaj.png"
     },
     {
         name: "Anil Reddy",
-        role: "Founder and Designer",
-        company: "Happy Pet",
+        role: "Founder & Designer",
+        company: "Happy Pet, Bengaluru",
         image: "/people/Anil Reddy.png"
     },
     {
@@ -27,51 +27,51 @@ const speakers = [
         image: "/people/Saikat Saha.jpg"
     },
     {
-        name: "Ben Thomas Palamoothil",
-        role: "Sr Art Director",
-        company: "EY",
+        name: "Ben Thomas Palamoottil",
+        role: "Senior Art Director",
+        company: "EY, Kochi",
         image: "/people/Ben Thomas.jpeg"
     },
     {
         name: "Advin Netto",
         role: "UX Designer",
-        company: "Google",
+        company: "Google, Bengaluru",
         image: "/people/Advin Netto.png"
     },
     {
-        name: "Udaya Kumar",
-        role: "Lead UX Designer",
-        company: "Siemens",
+        name: "Uday Kumar",
+        role: "UX Designer",
+        company: "Siemens, Bengaluru",
         image: "/people/Udaya Kumar.png"
     },
     {
         name: "Devika Panicker Prasad",
         role: "Product Designer",
-        company: "Air India",
+        company: "Air India, Kochi",
         image: "/people/Devika Panicker Prasad.png"
     },
     {
-        name: "Govind Janardhanan",
-        role: "Sr. Director of Design",
-        company: "Natquantum Shift Technologies",
+        name: "Govind Janardhan",
+        role: "Senior Director Design Excellence and Technology At",
+        company: "Nxtquantum Shift Technologies, New Delhi",
         image: "/people/Govind Janardhanan.png"
     },
     {
         name: "Vijay Raj N",
-        role: "Sr Graphic Designer",
-        company: "Webandcrafts",
+        role: "Senior Creative Designer",
+        company: "Webandcrafts, Kochi",
         image: "/people/Vijay Raj N.jpeg"
     },
     {
         name: "Hiran Venugopalan",
         role: "Product Designer",
-        company: "Tata Communications",
+        company: "Tata Communications, Bengaluru",
         image: "/people/Hiran Venugopalan.png"
     },
     {
         name: "Sunil Prabhakar",
-        role: "Consultant",
-        company: "AI and Digital Practices",
+        role: "Consultant in AI and",
+        company: "Digital Practices",
         image: "/people/Sunil Prabhakar.png"
     },
 ];

@@ -162,4 +162,12 @@
     .carouselGlobal {
         mask-image: none;
     }
+
+    .track {
+        animation: scrollLeft 30s linear infinite;
+    }
+
+    .carouselGlobal:hover .track {
+        animation-play-state: running;
+    }
 }
