@@ -7,7 +7,7 @@ export default function VenueSection() {
             <div className={styles.wrapper}>
                 <div className={styles.left}>
                     <h2 className={styles.title}>
-                        At Amrita School of Arts and Sciences, Kochi
+                        At Amrita Vishwa Vidyapeetham, Kochi
                     </h2>
                     <div className={styles.dateRow}>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#333" strokeWidth="1.5">
@@ -35,7 +35,7 @@ export default function VenueSection() {
                     <div className={styles.imageFrame}>
                         <Image
                             src="/assets/images/amrita-campus.jpg"
-                            alt="Amrita School of Arts and Sciences, Kochi"
+                            alt="Amrita Vishwa Vidyapeetham, Kochi"
                             fill
                             className={styles.venueImage}
                         />
