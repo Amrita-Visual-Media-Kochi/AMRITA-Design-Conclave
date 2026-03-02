@@ -9,10 +9,36 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://adc.vmamritakochi.in'),
   title: "Amrita Design Conclave",
   description: "A two day immersive conclave bringing students, designers, and industry professionals together.",
+  keywords: ["Amrita Design Conclave", "Design", "Conclave", "Design Event", "Kochi", "Kerala", "UI/UX", "Industry", "Academia"],
+  openGraph: {
+    title: "Amrita Design Conclave",
+    description: "A two day immersive conclave bringing students, designers, and industry professionals together.",
+    url: "https://adc.vmamritakochi.in",
+    siteName: "Amrita Design Conclave",
+    images: [
+      {
+        url: "/assets/backgrounds/hero-bg.png",
+        width: 1200,
+        height: 630,
+        alt: "Amrita Design Conclave",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Amrita Design Conclave",
+    description: "A two day immersive conclave bringing students, designers, and industry professionals together.",
+    images: ["/assets/backgrounds/hero-bg.png"],
+  },
   icons: {
     icon: "/other/1.svg",
+    shortcut: "/other/1.svg",
+    apple: "/other/1.svg",
   },
 };
 

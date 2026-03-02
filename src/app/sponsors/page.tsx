@@ -55,14 +55,23 @@ export default function SponsorsPage() {
                 <div className={styles.announcementContent}>
                     <h2 className={styles.announcementTitle}>
                         Partner Announcements
-                        <br />
-                        Coming Soon.....
                     </h2>
-                    <p className={styles.announcementText}>
-                        We are curating partnerships with organizations that share our commitment to
-                        bridging academia and industry. Announcements will be made once
-                        collaborations are finalized.
-                    </p>
+                    <div className={styles.announcementLogos}>
+                        <Image
+                            src="/logo/1.jpeg"
+                            alt="Partner Logo 1"
+                            width={325}
+                            height={156}
+                            className={styles.announcementLogo}
+                        />
+                        <Image
+                            src="/logo/2.png"
+                            alt="Partner Logo 2"
+                            width={325}
+                            height={156}
+                            className={styles.announcementLogo}
+                        />
+                    </div>
                 </div>
                 <Image
                     src="/assets/images/frame-decoration.svg"

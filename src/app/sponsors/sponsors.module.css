@@ -189,13 +189,13 @@
 .announcementContent {
     width: 100%;
     max-width: 800px;
-    text-align: left;
+    text-align: center;
     z-index: 2;
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    align-items: flex-start;
+    gap: 2.5rem;
+    align-items: center;
 }
 
 .announcementTitle {
@@ -211,6 +211,23 @@
     line-height: 1.7;
     color: #666;
     max-width: 600px;
+}
+
+.announcementLogos {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.announcementLogo {
+    object-fit: contain;
+    height: auto;
+    max-height: 130px;
+    width: auto;
 }
 
 /* ========== RESPONSIVE ========== */
